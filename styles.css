@@ -2,4 +2,15 @@ body{
     margin: 0;
     padding: 0;
 }
+h1{
+    color:rgba(45, 45, 185, 0.767);
+}
+#section1{
+    display:flex;
+    align-content: center;
+    flex-direction: column;
+    border: 1px solid blue;
+    align-items: center;
+    width: 50%;
+}
 
