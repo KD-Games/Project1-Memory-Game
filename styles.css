@@ -141,6 +141,14 @@ header h1 {
 }
 .front-card {
     transform: rotateY(180deg);
+    opacity: 1;
+    background-color: black;
 }
-.back-card{
+.x .overlay{
+    width:100%;
+    height: 252px;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+
+
 }

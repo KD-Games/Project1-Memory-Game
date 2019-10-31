@@ -6,6 +6,7 @@ let firstCard, secondCard;
 
 
 
+
 function flipCard(){
     if(lockBoard) return;
     if (this === firstCard) return;
@@ -31,12 +32,12 @@ function checkForMatch(){
     
 }
 
-
-
-
 function disableCards(){
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+
+     firstCard.classList.add('x');
+     secondCard.classList.add('x');
 
     resetBoard();
 }
