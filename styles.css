@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    transition: all 1s;
 }
 h1, h2, h3, h4, h5, h6, p, li, a {
     font-family: 'Jomolhari', serif;
@@ -9,6 +10,9 @@ h1, h2, h3, h4, h5, h6, p, li, a {
 body{
     margin: 0;
     padding: 0;
+    display: block;
+    background-image: url(images/bkgd.jpg);
+    background-size: cover;
 }
 img {
     width: 100%;
@@ -25,13 +29,57 @@ img {
     width: 100%;
     height: 100%;
 }
+/* Header */
 header {
     display: flex;
     align-items: center;
+    padding: 0 0 40px;
 }
 header img {
-    width: 50px;
+    width: 70px;
 }
 header h1 {
-    font-size: 2em;
+    font-size: 4em;
+    padding-left: 25px;
+    color: white;
+}
+/* Section Description */
+.description h2 {color: white;}
+.description p {
+    padding-bottom: 5px;
+    color: white;
+}
+.description ul {
+    list-style: none;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+.description ul li {
+    color: white;
+}
+.description ul li::before{
+    content: "\2022";
+    color: turquoise; /* Change the color */
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+/* Game Buttons */
+.level-title h2 {color: white;}
+.game-btns {
+    padding: 20px 0;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+.game-btns button {
+    padding: 15px 20px;
+    font-size: 1.4em;
+    width: 150px;
+    border-radius: 8px;
+    border: none;
+}
+.game-btns button:hover {
+    background-color: turquoise;
 }
