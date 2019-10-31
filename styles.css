@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 h1, h2, h3, h4, h5, h6, p, li, a {
     font-family: 'Jomolhari', serif;
@@ -52,16 +52,16 @@ header img {
    
     display: flex;
     font-size: 20px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 20%;
     margin: auto;
-
+    padding: 20px 0;
 }
 #score{
-    margin-top: 35px;
-    margin-left: 10px;
-    font-size: 20px; 
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 30px; 
 }
 
 header h1 {
@@ -108,4 +108,39 @@ header h1 {
 }
 .game-btns button:hover {
     background-color: turquoise;
+}
+
+/*Card layout */
+.cards-container{
+    display: flex;
+    width:600px;
+    height:520px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+.memory-card {
+    width:180px;
+    height:252;
+    position:relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+.front-card, .back-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front-card {
+    transform: rotateY(180deg);
+}
+.back-card{
 }
