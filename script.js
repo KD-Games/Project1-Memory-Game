@@ -134,10 +134,8 @@ function gameOver(){
 }
 
 
-
-
 cards.forEach(card => {
     card.addEventListener('click', flipCard);
     card.addEventListener("click", congratulations);
-    card.addEventListener("click",gameOver);
+    card.addEventListener("click", gameOver);
 });
