@@ -7,7 +7,7 @@
 </head>
 <body>
 <section class="score-section">
-    <h1>Score:</h1><span id="score">100</span>
+    <h1>Score:</h1><span id="score"></span>
 </section>
 
 
@@ -56,11 +56,28 @@
                 <p>You're a winner 🎉🎉</p>
             </div>
             <div class="content-2">
-                <p>Your score is <span id=finalScore></span></p>
+                <p>Your score is <span id="score-pop"></span></p>
                 <p>Time to go to next level!</p>
             </div>
             <button id="next-level" onclick="nextLevel()">
                 Next Level</a>
+            </button>
+        </div>
+    </div>
+
+    <div id="popup2" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Game Over!</h2>
+            </div>
+            <div class="content-2">
+                <p>Sorry you lost &#x2620;</p>
+            </div>
+            <button id="next-level" onclick="nextLevel()">
+                Try Again</a>
+            </button>
+            <button id="next-level" onclick="nextLevel()">
+                Go back</a>
             </button>
         </div>
     </div>
