@@ -59,9 +59,7 @@
                 <p>Your score is <span id="score-pop"></span></p>
                 <p>Time to go to next level!</p>
             </div>
-            <button id="next-level" onclick="nextLevel()">
-                Next Level</a>
-            </button>
+            <button id="next-level" type="button"><a href="ch2-Disney.html">Next Level</a></button>
         </div>
     </div>
 
@@ -73,10 +71,10 @@
             <div class="content-2">
                 <p>Sorry you lost &#x2620;</p>
             </div>
-            <button id="next-level" onclick="nextLevel()">
+            <button id="try-again" onClick="window.location.reload();">
                 Try Again</a>
             </button>
-            <button id="next-level" onclick="nextLevel()">
+            <button id="back" onclick="goBack()" >
                 Go back</a>
             </button>
         </div>

@@ -118,6 +118,10 @@ if (matchedCard.length == cards.length){
     };
 }
 
+function goBack() {
+    window.history.back();
+  }
+
 
 
 initialFlip();
