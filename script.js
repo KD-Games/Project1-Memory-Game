@@ -4,10 +4,15 @@ let lockBoard = false;
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
-let score = 100;
-let finalScoreSet = document.getElementById('finalScore');
-finalScoreSet.innerText = score;
+let score = 10;
+let scoreField = document.getElementById('score');
+let scoreFieldPopup = document.getElementById('score-pop');
+
+scoreField.innerText = score; 
+scoreFieldPopup.innerText = score; 
+
 let modal = document.getElementById("popup1");
+let gameOverPop = document.getElementById("popup2");
 let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
 
@@ -89,9 +94,9 @@ function unflipCards(){
         resetBoard();
     }, 1500); 
     score -= 5;
-    let scoreField = document.getElementById('score');
     scoreField.innerText = score;
-    finalScoreSet.innerText = score;
+    scoreFieldPopup.innerText = score;
+
 }
 
 function resetBoard(){
@@ -107,7 +112,7 @@ function resetBoard(){
 })();
 
 function congratulations(){
-    if (matchedCard.length == cards.length){
+if (matchedCard.length == cards.length){
     //show congratulations modal
     modal.classList.add("show");
     };
@@ -118,8 +123,17 @@ function congratulations(){
 initialFlip();
 flipBack();
 
+function gameOver(){
+    if(score<=0){
+        gameOverPop.classList.add("show");
+        };
+}
+
+
+
 
 cards.forEach(card => {
     card.addEventListener('click', flipCard);
     card.addEventListener("click", congratulations);
+    card.addEventListener("click",gameOver);
 });
