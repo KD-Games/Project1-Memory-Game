@@ -150,6 +150,7 @@ header h1 {
     height: 252px;
     background: rgba(0,0,0,.5);
     position: absolute;
-
-
 }
+.avoid-clicks {
+    pointer-events: none;
+  }

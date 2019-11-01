@@ -10,13 +10,14 @@ let firstCard, secondCard;
 
 
 function initialFlip(){
-setTimeout(loadFlip,2000);
+setTimeout(loadFlip,800);
 
 }
 
 function loadFlip(){
 cards.forEach(card => {
    card.classList.add('flip');
+   card.classList.add('avoid-clicks');
 });
 }
 
@@ -30,6 +31,7 @@ function flipBack(){
 function loadAnotherFlip(){
     cards.forEach(card => {
         card.classList.remove('flip');
+        card.classList.remove('avoid-clicks');
         });
     }  
 ////////////////////////////////////////////////////////////
@@ -99,5 +101,3 @@ flipBack();
 
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-
-
