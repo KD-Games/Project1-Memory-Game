@@ -5,6 +5,10 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 let score = 100;
+let finalScore;
+let modal = document.getElementById("popup1");
+let closeicon = document.querySelector(".close");
+let matchedCard = document.getElementsByClassName("match");
 
 // //Initial flip so the player can view all the cards and memorize
 
@@ -13,7 +17,6 @@ function initialFlip(){
 setTimeout(loadFlip,800);
 
 }
-
 
 function loadFlip(){
 
@@ -70,6 +73,8 @@ function disableCards(){
 
      firstCard.classList.add('x');
      secondCard.classList.add('x');
+     firstCard.classList.add('match');
+     secondCard.classList.add('match');
 
     resetBoard();
 }
@@ -82,9 +87,11 @@ function unflipCards(){
 
         resetBoard();
     }, 1500); 
-    score-=5;
+    score -= 5;
     let scoreField = document.getElementById('score');
+    let finalScoreField = document.getElementById('finalScore');
     scoreField.innerText = score;
+    finalScoreField.innerText = score;
 }
 
 function resetBoard(){
@@ -99,6 +106,12 @@ function resetBoard(){
     });
 })();
 
+function congratulations(){
+    if (matchedCard.length == 6){
+    //show congratulations modal
+    modal.classList.add("show");
+    };
+}
 
 
 
@@ -109,4 +122,7 @@ flipBack();
 
 
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach(card => {
+    card.addEventListener('click', flipCard);
+    card.addEventListener("click", congratulations);
+});
