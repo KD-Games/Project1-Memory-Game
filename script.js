@@ -6,6 +6,33 @@ let firstCard, secondCard;
 
 
 
+// //Initial flip so the player can view all the cards and memorize
+
+
+function initialFlip(){
+setTimeout(loadFlip,2000);
+
+}
+
+function loadFlip(){
+cards.forEach(card => {
+   card.classList.add('flip');
+});
+}
+
+// //Player has 10 seconds to view the cards, 
+// //below we're making all the cards face back again
+
+function flipBack(){
+    setTimeout(loadAnotherFlip,8000);
+   
+    }
+function loadAnotherFlip(){
+    cards.forEach(card => {
+        card.classList.remove('flip');
+        });
+    }  
+////////////////////////////////////////////////////////////
 
 function flipCard(){
     if(lockBoard) return;
@@ -63,6 +90,13 @@ function resetBoard(){
         card.style.order = randomPos;
     });
 })();
+
+
+
+
+initialFlip();
+flipBack();
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
