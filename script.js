@@ -96,6 +96,7 @@ function resetBoard(){
 
 
 
+
 initialFlip();
 flipBack();
 
