@@ -107,7 +107,7 @@ function resetBoard(){
 })();
 
 function congratulations(){
-    if (matchedCard.length == 6){
+    if (matchedCard.length == cards.length){
     //show congratulations modal
     modal.classList.add("show");
     };
