@@ -4,13 +4,13 @@ let lockBoard = false;
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
-
+let score = 100;
 
 // //Initial flip so the player can view all the cards and memorize
 
 
 function initialFlip(){
-setTimeout(loadFlip,1000);
+setTimeout(loadFlip,800);
 
 }
 
@@ -19,11 +19,11 @@ function loadFlip(){
 
 cards.forEach(card => {
    card.classList.add('flip');
-   
+   card.classList.add('avoid-clicks');
 });
 }
 
-// //Player has 10 seconds to view the cards, 
+// //Player has 8 seconds to view the cards, 
 // //below we're making all the cards face back again
 
 function flipBack(){
@@ -34,7 +34,8 @@ setTimeout(loadAnotherFlip,8000);
 function loadAnotherFlip(){
    cards.forEach(card => {
         card.classList.remove('flip');
-        }); 
+        card.classList.remove('avoid-clicks');
+        });
     }  
 ////////////////////////////////////////////////////////////
 
@@ -81,6 +82,9 @@ function unflipCards(){
 
         resetBoard();
     }, 1500); 
+    score-=5;
+    let scoreField = document.getElementById('score');
+    scoreField.innerText = score;
 }
 
 function resetBoard(){
@@ -103,5 +107,3 @@ flipBack();
 
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-
-
