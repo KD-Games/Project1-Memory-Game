@@ -1,31 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head >
 <title>Memory Game - Toys</title>
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-<section>
-    <h1>Score:</h1><span>100</span>
+<section class="score-section">
+    <h1>Score:</h1><span id="score"></span>
 </section>
-    <div>
-<div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+
+
+<div class="cards-container">
+
+<div class="memory-card toysize" data-framework="barbie">
+     <span class="overlay"></span> 
+     <img class="front-card" src="images/toys/barbie.jpg" alt="barbie">
+     <img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
 </div>
 
-<div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+<div class="memory-card toysize" data-framework="barbie"> 
+        <span class="overlay"></span> 
+        <img class="front-card" src="images/toys/barbie.jpg" alt="barbie">
+        <img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div class="memory-card toysize" data-framework="greenarmymen"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/toys/greenarmymen.jpg" alt="greenarmymen">
+        <img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div class="memory-card toysize" data-framework="greenarmymen"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/toys/greenarmymen.jpg" alt="greenarmymen">
+        <img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div class="memory-card toysize" data-framework="hotwheels"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/toys/hotwheels.jpg" alt="hotwheels">
+        <img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div class="memory-card toysize" data-framework="hotwheels"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/toys/hotwheels.jpg" alt="hotwheels">
+        <img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div class="memory-card toysize" data-framework="legos"> 
+    <span class="overlay"></span> 
+
+<img class="front-card" src="images/toys/legos.jpg" alt="legos">
+<img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div class="memory-card toysize" data-framework="legos"> 
+    <span class="overlay"></span> 
+
+<img class="front-card" src="images/toys/legos.jpg" alt="legos">
+<img class="back-card"  src="images/toys/toybkgd.jpg" alt="toys">
+</div>
+
+<div id="popup1" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Congratulations 🎉</h2>
+                <p>You're a winner 🎉🎉</p>
+            </div>
+            <div class="content-2">
+                <p>Your final score is <span id="score-pop"></span></p>
+               
+            </div>
+        </div>
     </div>
 
+    <div id="popup2" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Game Over!</h2>
+            </div>
+            <div class="content-2">
+                <p>Sorry you lost &#x2620;</p>
+            </div>
+            <button id="try-again" onClick="window.location.reload();">
+                Try Again</a>
+            </button>
+            <button id="back" onclick="goBack()" >
+                Go back</a>
+            </button>
+        </div>
+    </div>
+    
+    
 </div>
 
-
+<script src="script.js"></script>  
 </body>
 </html>
