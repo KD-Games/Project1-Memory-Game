@@ -5,7 +5,8 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 let score = 100;
-let finalScore;
+let finalScoreSet = document.getElementById('finalScore');
+finalScoreSet.innerText = score;
 let modal = document.getElementById("popup1");
 let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
@@ -89,9 +90,8 @@ function unflipCards(){
     }, 1500); 
     score -= 5;
     let scoreField = document.getElementById('score');
-    let finalScoreField = document.getElementById('finalScore');
     scoreField.innerText = score;
-    finalScoreField.innerText = score;
+    finalScoreSet.innerText = score;
 }
 
 function resetBoard(){
