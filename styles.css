@@ -153,3 +153,7 @@ header h1 {
 
 
 }
+
+.noClick {
+    pointer-events: none;
+ }

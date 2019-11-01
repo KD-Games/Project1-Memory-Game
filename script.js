@@ -10,13 +10,16 @@ let firstCard, secondCard;
 
 
 function initialFlip(){
-setTimeout(loadFlip,2000);
+setTimeout(loadFlip,1000);
 
 }
 
+
 function loadFlip(){
+
 cards.forEach(card => {
    card.classList.add('flip');
+   
 });
 }
 
@@ -24,13 +27,14 @@ cards.forEach(card => {
 // //below we're making all the cards face back again
 
 function flipBack(){
-    setTimeout(loadAnotherFlip,8000);
-   
+setTimeout(loadAnotherFlip,8000);
+    
     }
+
 function loadAnotherFlip(){
-    cards.forEach(card => {
+   cards.forEach(card => {
         card.classList.remove('flip');
-        });
+        }); 
     }  
 ////////////////////////////////////////////////////////////
 
@@ -53,7 +57,7 @@ function flipCard(){
 }
 
 function checkForMatch(){
-    let isMatch =firstCard.dataset.framework === secondCard.dataset.framework;
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
     isMatch ? disableCards() : unflipCards();
     
