@@ -124,12 +124,22 @@ header h1 {
     perspective: 1000px;
 }
 .memory-card {
-    width:180px;
-    height:252;
     position:relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
+}
+.animalsize {
+    width:180px;
+    height:252px;
+}
+.disneysize {
+    width: 24.5%;
+    height: auto;
+}
+.toysize {
+    width: 19.5%;
+    height: auto;
 }
 .memory-card:active {
     transform: scale(.97);
@@ -221,6 +231,9 @@ header h1 {
     background-color: #4CAF50;
     transition: all 1s;
     cursor: pointer;
+}
+.popup button a {
+    color: #ffffff;
 }
 .popup button:hover {
     background-color: green;

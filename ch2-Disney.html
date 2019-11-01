@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Memory Game - Disney Cartoons</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <section class="score-section">
@@ -10,50 +11,44 @@
 
 <div class="cards-container">
 
-<div class="memory-card" data-framework="mickey">
+<div class="memory-card disneysize" data-framework="mickey">
      <span class="overlay"></span> 
      <img class="front-card" src="images/disney/mickey-mouse.jpg" alt="mickey">
      <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
 </div>
 
-<div class="memory-card" data-framework="mickey"> 
+<div class="memory-card disneysize" data-framework="mickey"> 
         <span class="overlay"></span> 
         <img class="front-card" src="images/disney/mickey-mouse.jpg" alt="mickey">
         <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
 </div>
-<div class="memory-card" data-framework="minnie"> 
-                <span class="overlay"></span> 
-
-        <img class="front-card" src="images/disney/minnie-mouse.jpg" alt="minnie">
-        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
-</div>
-<div class="memory-card" data-framework="minnie"> 
-                <span class="overlay"></span> 
-
-        <img class="front-card" src="images/disney/minnie-mouse.jpg" alt="minnie">
-        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
-</div>
-<div class="memory-card" data-framework="goofy"> 
-                <span class="overlay"></span> 
-
-        <img class="front-card" src="images/disney/goofy.jpg" alt="goofy">
-        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
-</div>
-<div class="memory-card" data-framework="goofy"> 
-                <span class="overlay"></span> 
-
-        <img class="front-card" src="images/disney/goofy.jpg" alt="goofy">
-        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
-</div>
-<div class="memory-card" data-framework="donald"> 
+<div class="memory-card disneysize" data-framework="minnie"> 
         <span class="overlay"></span> 
-
+        <img class="front-card" src="images/disney/minnie-mouse.jpg" alt="minnie">
+        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
+</div>
+<div class="memory-card disneysize" data-framework="minnie"> 
+        <span class="overlay"></span> 
+        <img class="front-card" src="images/disney/minnie-mouse.jpg" alt="minnie">
+        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
+</div>
+<div class="memory-card disneysize" data-framework="goofy"> 
+        <span class="overlay"></span> 
+        <img class="front-card" src="images/disney/goofy.jpg" alt="goofy">
+        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
+</div>
+<div class="memory-card disneysize" data-framework="goofy"> 
+        <span class="overlay"></span> 
+        <img class="front-card" src="images/disney/goofy.jpg" alt="goofy">
+        <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
+</div>
+<div class="memory-card disneysize" data-framework="donald"> 
+        <span class="overlay"></span> 
         <img class="front-card" src="images/disney/donald-duck.jpg" alt="donald">
         <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
 </div>
-<div class="memory-card" data-framework="donald"> 
+<div class="memory-card disneysize" data-framework="donald"> 
         <span class="overlay"></span> 
-
         <img class="front-card" src="images/disney/donald-duck.jpg" alt="donald">
         <img class="back-card"  src="images/disney/disneybkgd.jpg" alt="disney">
 </div>
@@ -65,17 +60,31 @@
                 <p>You're a winner 🎉🎉</p>
             </div>
             <div class="content-2">
-                <p>Your score is <span id=finalScore></span></p>
+                <p>Your score is <span id="score-pop"></span></p>
                 <p>Time to go to next level!</p>
             </div>
-            <button id="next-level" onclick="nextLevel()">
-                Next Level</a>
+            <button id="next-level" type="button"><a href="ch3-Toys.html">Next Level</a></button>
+        </div>
+    </div>
+
+    <div id="popup2" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Game Over!</h2>
+            </div>
+            <div class="content-2">
+                <p>Sorry you lost &#x2620;</p>
+            </div>
+            <button id="try-again" onClick="window.location.reload();">
+                Try Again</a>
+            </button>
+            <button id="back" onclick="goBack()" >
+                Go back</a>
             </button>
         </div>
     </div>
 
 </div>
-
 
 <script src="script.js"></script>  
 
