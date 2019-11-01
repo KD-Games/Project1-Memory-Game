@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.memory-card');
+let cards = document.querySelectorAll('.memory-card');
 let lockBoard = false;
 
 let hasFlippedCard = false;
@@ -36,7 +36,7 @@ cards.forEach(card => {
 // //below we're making all the cards face back again
 
 function flipBack(){
-setTimeout(loadAnotherFlip,8000);
+setTimeout(loadAnotherFlip,8000); 
     
     }
 
@@ -119,6 +119,7 @@ if (matchedCard.length == cards.length){
 }
 
 function goBack() {
+    console.log('back')
     window.history.back();
   }
 
