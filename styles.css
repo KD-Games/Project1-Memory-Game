@@ -179,12 +179,14 @@ header h1 {
 	width: 85%;
 	position: relative;
 	transition: all 5s ease-in-out;
-	font-family: 'Jomolhari', serif;
+    font-family: 'Jomolhari', serif;
+    text-align: center;
 }
   
 .popup h2 {
 	margin-top: 0;
-	color: #333;
+    color: #333;
+    font-size: 2em;
 }
 
 .popup .close {
@@ -205,7 +207,20 @@ header h1 {
 .content-2 {
 	max-height: 30%;
 	overflow: auto;
-	text-align: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.popup button {
+    padding: 10px 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    color: white;
+    background-color: #4CAF50;
+    transition: all 1s;
+    cursor: pointer;
+}
+.popup button:hover {
+    background-color: green;
 }
 .show {
 	visibility: visible !important;
