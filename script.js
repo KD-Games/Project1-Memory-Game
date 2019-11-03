@@ -32,25 +32,33 @@ document.getElementById("countdown").innerHTML = firstTimer;
   if(firstTimer <= -1){
     clearInterval(initialTimer);
     document.getElementById("countdown").innerHTML = "GO!";
+    
+    gameTimer(); // after initial timwe ends, starts Game timer
+
   }
 }, 1000);
  
 //Game Timer
 
-let timeLeft = 10;
+let timeLeft = 20;
 
 function gameTimer(){
     let beginTimer = setInterval(function(){
-    document.getElementById("countdown").innerHTML = timeLeft;
+    let countdown = document.getElementById("countdown");
+    countdown.innerHTML = timeLeft;
     timeLeft -= 1;
-    if(timeLeft <= -1){
+    if(timeLeft <= -1 || score < 0 || matchedCard.length == cards.length){
     clearInterval(beginTimer);
             }
-          }, 1000);  
-    if(timeLeft<=0){
-        gameOverPop.classList.add("show"); 
+    if(timeLeft < 0){
+    countdown.style.backgroundColor = "red";   
+    let goT = document.getElementById("game-over-time");
+    goT.style.visibility = "visible";
+    gameOverPop.classList.add("show");
     }
-    }
+          }, 1000); 
+     }
+    
 
 // //Initial flip so the player can view all the cards and memorize
 
@@ -168,7 +176,9 @@ flipBack();
 
 
 function gameOver(){
-    if(score <=0 ){
+    if(score < 0 ){
+    let goS = document.getElementById("game-over-score");
+    goS.style.visibility = "visible";
         gameOverPop.classList.add("show");
         };
 }

@@ -22,15 +22,6 @@ a{
 }
 
 
-.memory-game{
-    width:50%;
-    border: 1px solid;
-    margin: auto;
-    height:70%;
-    margin-top: 50px;
-    
-}
-
 .score-section{
    
     display: flex;
@@ -73,8 +64,6 @@ a{
 /*Card layout */
 .cards-container{
     display: flex;
-    width:600px;
-    height:520px;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -87,13 +76,27 @@ a{
     transform-style: preserve-3d;
     transition: transform .5s;
 }
+.animalcontainer{
+    width:600px;
+    height:520px;
+}
 .animalsize {
     width:180px;
     height:252px;
 }
+.disneycontainer{
+    margin-top:20px;
+    width:800px;
+    height:620px;
+}
 .disneysize {
     width: 24.5%;
     height: auto;
+}
+.toycontainer{
+    margin-top:20px;
+    width:1000px;
+    height:620px;
 }
 .toysize {
     width: 19.5%;
@@ -211,6 +214,13 @@ a{
     margin: 0 auto;
 
   }
+  #game-over-score{
+    visibility: hidden; 
+  }
+  #game-over-time{
+    visibility: hidden;
+  }
+  
 
 .show {
 	visibility: visible !important;
