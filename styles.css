@@ -4,6 +4,8 @@
     padding: 0;
     /* transition: all 1s; */
 }
+
+
 h1, h2, h3, h4, h5, h6, p, li, a {
     font-family: 'Jomolhari', serif;
 }
@@ -14,33 +16,11 @@ body{
     background-image: url(images/bkgd.jpg);
     background-size: cover;
 }
-img {
-    width: 100%;
-    height: auto;
-}
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
 a{
     text-decoration: none;
 }
-/* Header */
-header {
-    display: flex;
-    align-items: center;
-    padding: 0 0 40px;
-}
-header img {
-    width: 50px;
-}
+
 
 .memory-game{
     width:50%;
@@ -57,61 +37,38 @@ header img {
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    width: 40%;
     margin: auto;
     padding: 20px 0;
 }
-#score{
-    margin-top: 5px;
-    margin-left: 5px;
-    font-size: 30px; 
+#countdown{
+    float: left;
+    color:white;
+    margin-top: 30px;
+    margin-left: 300px;
+    position: absolute;
+    font-size: 30px;
+	background: #80CC5F;
+	width: 100px;
+	height: 100px;
+    line-height: 100px;
+	border-radius: 100px;
+    text-align: center;
+    font-size: 40px;
+}
+.score-section h1{
+    width: 120px;
+    color:white;
 }
 
-header h1 {
-    font-size: 4em;
-    padding-left: 25px;
-    color: white;
+#score{
+    margin-top: 10px;
+    margin-left: 5px; 
+    font-size: 40px; 
+    width: 40px;
+    color:white;
 }
-/* Section Description */
-.description h2 {color: white;}
-.description p {
-    padding-bottom: 5px;
-    color: white;
-}
-.description ul {
-    list-style: none;
-    padding-left: 15px;
-    margin-bottom: 20px;
-}
-.description ul li {
-    color: white;
-}
-.description ul li::before{
-    content: "\2022";
-    color: turquoise; /* Change the color */
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-}
-/* Game Buttons */
-.level-title h2 {color: white;}
-.game-btns {
-    padding: 20px 0;
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-}
-.game-btns button {
-    padding: 15px 20px;
-    font-size: 1.4em;
-    width: 150px;
-    border-radius: 8px;
-    border: none;
-}
-.game-btns button:hover {
-    background-color: turquoise;
-}
+
 
 /*Card layout */
 .cards-container{
@@ -123,6 +80,7 @@ header h1 {
     margin: 0 auto;
     perspective: 1000px;
 }
+
 .memory-card {
     position:relative;
     transform: scale(1);
@@ -150,7 +108,7 @@ header h1 {
 }
 .front-card, .back-card {
     position: absolute;
-    backface-visibility: hidden;
+    backface-visibility: hidden; 
 }
 .front-card {
     transform: rotateY(180deg);
@@ -168,7 +126,7 @@ header h1 {
     pointer-events: none;
   }
 
-  /* Congratulation Popup */
+  /* Congratulation Popup */ 
   .panel-overlay {
 	position: fixed;
 	top: 0;
@@ -177,14 +135,17 @@ header h1 {
 	right: 0;
 	background: rgba(0, 0, 0, 0.7);
 	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
+	visibility: hidden; 
+    opacity: 0;
+  }
+
 .panel-overlay:target {
 	visibility: visible;
-	opacity: 1;
+    opacity: 1;
+   
 }
-  .popup {
+
+.popup {
 	margin: 70px auto;
 	padding: 20px;
 	background: #ffffff;
@@ -202,7 +163,7 @@ header h1 {
     font-size: 2em;
 }
 
-.popup .close {
+/* .popup .close {
 	position: absolute;
 	top: 20px;
 	right: 30px;
@@ -211,11 +172,11 @@ header h1 {
 	font-weight: bold;
 	text-decoration: none;
 	color: #333;
-}
+} */
 
-.popup .close:hover {
-	color: #E5F720;
-}
+/* .popup .close:hover {
+	color: #E5F720; 
+}*/
 .popup .content-1,
 .content-2 {
 	max-height: 30%;
@@ -238,6 +199,19 @@ header h1 {
 .popup button:hover {
     background-color: green;
 }
+
+.panel-overlay-main {
+	
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden; 
+    opacity: 0;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+
+  }
+
 .show {
 	visibility: visible !important;
 	opacity: 100 !important;

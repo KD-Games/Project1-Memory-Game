@@ -1,3 +1,5 @@
+
+    
 let cards = document.querySelectorAll('.memory-card');
 let lockBoard = false;
 
@@ -11,10 +13,44 @@ let scoreFieldPopup = document.getElementById('score-pop');
 scoreField.innerText = score; 
 scoreFieldPopup.innerText = score; 
 
-let modal = document.getElementById("popup1");
+let congratulationsPop = document.getElementById("popup1");
 let gameOverPop = document.getElementById("popup2");
 let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
+
+
+  
+  
+
+//Initial Timer 
+
+let firstTimer = 4;
+let initialTimer = setInterval(function(){
+  
+document.getElementById("countdown").innerHTML = firstTimer;
+  firstTimer -= 1;
+  if(firstTimer <= -1){
+    clearInterval(initialTimer);
+    document.getElementById("countdown").innerHTML = "GO!";
+  }
+}, 1000);
+ 
+//Game Timer
+
+let timeLeft = 10;
+
+function gameTimer(){
+    let beginTimer = setInterval(function(){
+    document.getElementById("countdown").innerHTML = timeLeft;
+    timeLeft -= 1;
+    if(timeLeft <= -1){
+    clearInterval(beginTimer);
+            }
+          }, 1000);  
+    if(timeLeft<=0){
+        gameOverPop.classList.add("show"); 
+    }
+    }
 
 // //Initial flip so the player can view all the cards and memorize
 
@@ -36,7 +72,7 @@ cards.forEach(card => {
 // //below we're making all the cards face back again
 
 function flipBack(){
-setTimeout(loadAnotherFlip,8000); 
+setTimeout(loadAnotherFlip,5000); 
     
     }
 
@@ -48,7 +84,10 @@ function loadAnotherFlip(){
     }  
 ////////////////////////////////////////////////////////////
 
+
+
 function flipCard(){
+ 
     if(lockBoard) return;
     if (this === firstCard) return;
     this.classList.add('flip');
@@ -62,8 +101,7 @@ function flipCard(){
         hasFlippedCard = false;
         secondCard = this;
 
-        checkForMatch();
-    
+        checkForMatch();  
 }
 
 function checkForMatch(){
@@ -74,6 +112,7 @@ function checkForMatch(){
 }
 
 function disableCards(){
+   
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
@@ -113,13 +152,12 @@ function resetBoard(){
 
 function congratulations(){
 if (matchedCard.length == cards.length){
-    //show congratulations modal
-    modal.classList.add("show");
+    //show congratulations congratulationsPop
+    congratulationsPop.classList.add("show");
     };
 }
 
 function goBack() {
-    console.log('back')
     window.history.back();
   }
 
@@ -128,15 +166,19 @@ function goBack() {
 initialFlip();
 flipBack();
 
+
 function gameOver(){
-    if(score<=0){
+    if(score <=0 ){
         gameOverPop.classList.add("show");
         };
 }
 
 
 cards.forEach(card => {
+  
     card.addEventListener('click', flipCard);
     card.addEventListener("click", congratulations);
     card.addEventListener("click", gameOver);
 });
+
+

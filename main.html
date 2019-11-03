@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Memory Game</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="main-styles.css">
 </head>
 <body>
     <div class="container">
@@ -24,11 +24,45 @@
 
     <section class="level-title"><h2>Choose your Level:</h2></section>
     <section class="game-btns"> 
-        <button id="child" type="button"><a href="ch1-Animals.html">Children</a></button>
-        <button id="adult" type="button"><a href="ad1-Netflix.html"></a>Adults</button>
+        <button id="child" type="button">Children</button>
+        <button id="adult" type="button">Adults</button>
     </section>
-    </div>
 
-<script src="script.js"></script>    
+    <div id="children-popup" class="panel-overlay-main">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Level 1 of 3</h2>
+                <p>On each level before the game starts, you will have a few seconds to see the location of 
+                    the cards before they flip, are you ready to test your memory? </p>
+            </div>
+            <button id="start-children">
+                I'm ready!</a>
+            </button>
+        </div>
+    </div>
+    
+    <div id="adult-popup" class="panel-overlay-main">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Level 1 of 5</h2>
+            </div>
+            <div class="content-2">
+                <p>On each level before the game starts, you will have a few seconds to see the location of 
+                    the cards before they flip, are you ready to test your memory? </p>
+            </div>
+            <button id="start-adult">
+                I'm ready!</a>
+            </button>
+        </div>
+    </div>
+ </div>
+
+
+
+
+    
+    
+
+<script src="main.js"></script>    
 </body>
 </html>
