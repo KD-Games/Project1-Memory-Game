@@ -1,5 +1,3 @@
-
-    
 let cards = document.querySelectorAll('.innercard');
 let lockBoard = false;
 
@@ -7,10 +5,13 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 
-let score = 10;
-let scoreFinal = 10;
-console.log("This Score is " + score);
-console.log("This Storage value is " +sessionStorage['scoreSession']);
+//let score = 10;
+// let scoreFinal = 12;
+// console.log("This Score is " + score);
+// console.log("This Storage value is " + sessionStorage['scoreSession']);
+
+
+
 
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
@@ -23,219 +24,195 @@ let gameOverPop = document.getElementById("popup2");
 let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
 
+if(window.location.href.includes('ch1-Animals')){ //first page
+    sessionStorage.setItem('score', 0)
+}
+
+let score; 
+function getScore() {
+    score = sessionStorage.getItem('score')
+    score = Number(score) + 10;  //When i get to a new page i add ten to the score 
+    setScore() 
+}
+
+function setScore(){  //show score and save score to sessionStorage 
+    scoreField.innerText = score;
+    scoreFieldPopup.innerText = score;
+    sessionStorage.setItem('score', score)
+}
+
+getScore() 
 
 
 
 //Initial Timer 
 
 let firstTimer = 4;
-let initialTimer = setInterval(function(){
-  
-document.getElementById("countdown").innerHTML = firstTimer;
-  firstTimer -= 1;
-  if(firstTimer <= -1){
-    clearInterval(initialTimer);
-    document.getElementById("countdown").innerHTML = "GO!";
-    
-    gameTimer(); // after initial timwe ends, starts Game timer
+let initialTimer = setInterval(function () {
 
-  }
+    document.getElementById("countdown").innerHTML = firstTimer;
+    firstTimer -= 1;
+    if (firstTimer <= -1) {
+        clearInterval(initialTimer);
+        document.getElementById("countdown").innerHTML = "GO!";
+
+        gameTimer(); // after initial timwe ends, starts Game timer
+
+    }
 }, 1000);
- 
+
 //Game Timer
 
 let timeLeft = 20;
 
-function gameTimer(){
-    let beginTimer = setInterval(function(){
-    let countdown = document.getElementById("countdown");
-    countdown.innerHTML = timeLeft;
-    timeLeft -= 1;
-    if(timeLeft <= -1 || score < 0 || matchedCard.length == cards.length){
-    clearInterval(beginTimer);
-            }
-    if(timeLeft < 0){
-    countdown.style.backgroundColor = "red";   
-    let goT = document.getElementById("game-over-time");
-    goT.style.visibility = "visible";
-    gameOverPop.classList.add("show");
-    }
-          }, 1000); 
-     }
-    
+function gameTimer() {
+    let beginTimer = setInterval(function () {
+        let countdown = document.getElementById("countdown");
+        countdown.innerHTML = timeLeft;
+        timeLeft -= 1;
+        if (timeLeft <= -1 || score < 0 || matchedCard.length == cards.length) {
+            clearInterval(beginTimer);
+        }
+        if (timeLeft < 0) {
+            countdown.style.backgroundColor = "red";
+            let goT = document.getElementById("game-over-time");
+            goT.style.visibility = "visible";
+            gameOverPop.classList.add("show");
+        }
+    }, 1000);
+}
+
 
 // //Initial flip so the player can view all the cards and memorize
 
 
-function initialFlip(){
-setTimeout(loadFlip,800);
+function initialFlip() {
+    setTimeout(loadFlip, 800);
 
 }
 
-function loadFlip(){
+function loadFlip() {
 
-cards.forEach(card => {
-   card.classList.add('flip');
-   card.classList.add('avoid-clicks');
-});
+    cards.forEach(card => {
+        card.classList.add('flip');
+        card.classList.add('avoid-clicks');
+    });
 }
 
 // //Player has 8 seconds to view the cards, 
 // //below we're making all the cards face back again
 
-function flipBack(){
-setTimeout(loadAnotherFlip,5000); 
-    
-    }
+function flipBack() {
+    setTimeout(loadAnotherFlip, 5000);
 
-function loadAnotherFlip(){
-   cards.forEach(card => {
+}
+
+function loadAnotherFlip() {
+    cards.forEach(card => {
         card.classList.remove('flip');
         card.classList.remove('avoid-clicks');
-        });
-    }  
+    });
+}
 ////////////////////////////////////////////////////////////
 
 
 
-function flipCard(){
- 
-    if(lockBoard) return;
+function flipCard() {
+
+    if (lockBoard) return;
     if (this === firstCard) return;
     this.classList.add('flip');
-    if (!hasFlippedCard){
-       hasFlippedCard = true;
-       firstCard = this;
+    if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
 
-       return;
+        return;
     }
-    
-        hasFlippedCard = false;
-        secondCard = this;
 
-        checkForMatch();  
+    hasFlippedCard = false;
+    secondCard = this;
+
+    checkForMatch();
 }
 
-function checkForMatch(){
+function checkForMatch() {
     let isMatch = firstCard.parentElement.dataset.framework === secondCard.parentElement.dataset.framework;
 
     isMatch ? disableCards() : unflipCards();
-    
+
 }
 
-function disableCards(){
-   
+function disableCards() {
+
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-     firstCard.parentElement.classList.add('x');
-     secondCard.parentElement.classList.add('x');
-     firstCard.classList.add('match');
-     secondCard.classList.add('match');
+    firstCard.parentElement.classList.add('x');
+    secondCard.parentElement.classList.add('x');
+    firstCard.classList.add('match');
+    secondCard.classList.add('match');
 
     resetBoard();
 }
 
 
-function unflipCards(){
- lockBoard = true;
+function unflipCards() {
+    lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500); 
+    }, 1500);
     score -= 5;
-    scoreSession -= 5;
+    //scoreSession -= 5;
     // scoreField.innerText = score;
-    scoreField.innerText = scoreSession;
-    // scoreFieldPopup.innerText = score;
-    scoreFieldPopup.innerText = scoreSession;
+    setScore()
+
 }
 
 
-function resetBoard(){
+function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle(){
-    cards.forEach(card =>{
+(function shuffle() {
+    cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * cards.length);
         card.parentElement.style.order = randomPos;
     });
 })();
 
-function congratulations(){
-if (matchedCard.length == cards.length){
-    //show congratulations congratulationsPop
-    congratulationsPop.classList.add("show");
+function congratulations() {
+    if (matchedCard.length == cards.length) {
+        //show congratulations congratulationsPop
+        congratulationsPop.classList.add("show");
     };
 }
 
 function goBack() {
     window.history.back();
-  }
-
-
-
-let nextLevelButton = document.querySelector("#next-level");
-
-nextLevelButton.addEventListener('click', saveScore);
-
-function saveScore (){
-
-if (sessionStorage.getItem("scoreSession")){
-sessionStorage.setItem("scoreSession",score);
-const test = sessionStorage.getItem("scoreSession");
-console.log(test);
 }
 
-test = parseInt(sessionStorage.getItem("scoreSession")) + scoreFinal;
-
- console.log(test);
- scoreField.innerText = test; 
-//sessionStorage['scoreSession'] = score;
-// alert(sessionStorage['scoreSession']);
-
-// return scoreSession;
-// console.log(scoreSession);
-}
-
-if (sessionStorage.getItem("scoreSession")) { //check if the value is already stored in the sessionStorage
-    // Restore the contents of the text field
-    console.log(sessionStorage, sessionStorage.getItem("scoreSession"));
-    scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
-    // score = scoreSession;
-    scoreField.innerText = scoreSession; 
-    scoreFieldPopup.innerText = scoreSession; 
-    console.log("This Score is " + score);
-  console.log("This Storage value is " + sessionStorage['scoreSession']);
-  }
-
-//   console.log("This Score is " + score);
-//   console.log("This Storage value is " + sessionStorage['scoreSession']);
- 
 
 
 initialFlip();
 flipBack();
 
 
-function gameOver(){
-    if(score < 0 ){
-    let goS = document.getElementById("game-over-score");
-    goS.style.visibility = "visible";
+function gameOver() {
+    if (score < 0) {
+        let goS = document.getElementById("game-over-score");
+        goS.style.visibility = "visible";
         gameOverPop.classList.add("show");
-        };
+    };
 }
 
 
 cards.forEach(card => {
-  
+
     card.addEventListener('click', flipCard);
     card.addEventListener("click", congratulations);
     card.addEventListener("click", gameOver);
 });
-
-
