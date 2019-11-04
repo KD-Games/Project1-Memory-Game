@@ -1,6 +1,6 @@
 
     
-let cards = document.querySelectorAll('.memory-card');
+let cards = document.querySelectorAll('.innercard');
 let lockBoard = false;
 
 let hasFlippedCard = false;
@@ -113,7 +113,7 @@ function flipCard(){
 }
 
 function checkForMatch(){
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    let isMatch = firstCard.parentElement.dataset.framework === secondCard.parentElement.dataset.framework;
 
     isMatch ? disableCards() : unflipCards();
     
@@ -124,8 +124,8 @@ function disableCards(){
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-     firstCard.classList.add('x');
-     secondCard.classList.add('x');
+     firstCard.parentElement.classList.add('x');
+     secondCard.parentElement.classList.add('x');
      firstCard.classList.add('match');
      secondCard.classList.add('match');
 
@@ -153,8 +153,8 @@ function resetBoard(){
 
 (function shuffle(){
     cards.forEach(card =>{
-        let randomPos = Math.floor(Math.random() * 6);
-        card.style.order = randomPos;
+        let randomPos = Math.floor(Math.random() * cards.length);
+        card.parentElement.style.order = randomPos;
     });
 })();
 
