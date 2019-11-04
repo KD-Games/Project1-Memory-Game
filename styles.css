@@ -25,29 +25,35 @@ a{
     height: auto;
 } */
 
+header {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 25px 0 10px;
+}
 .score-section{ 
     display: flex;
     font-size: 20px;
     align-items: center;
     justify-content: center;
     width: 40%;
-    margin: auto;
     padding: 20px 0;
 }
 #countdown{
-    float: left;
     color:white;
-    margin-top: 30px;
-    margin-left: 300px;
-    position: absolute;
-    font-size: 30px;
+    /* margin-top: 30px;
+    margin-left: 300px; */
+    position: relative;
+    font-size: 34px;
 	background: #80CC5F;
-	width: 100px;
-	height: 100px;
-    line-height: 100px;
+	width: 75px;
+	height: 75px;
+    line-height: 75px;
 	border-radius: 100px;
     text-align: center;
-    font-size: 40px;
+    margin-left: 20px;
 }
 .score-section h1{
     width: 120px;
@@ -217,7 +223,7 @@ a{
 	padding: 20px;
 	background: #ffffff;
 	border-radius: 5px;
-	width: 85%;
+	width: 500px;
 	position: relative;
 	transition: all 5s ease-in-out;
     font-family: 'Jomolhari', serif;
