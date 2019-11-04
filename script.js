@@ -5,14 +5,6 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 
-//let score = 10;
-// let scoreFinal = 12;
-// console.log("This Score is " + score);
-// console.log("This Storage value is " + sessionStorage['scoreSession']);
-
-
-
-
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
 
@@ -25,7 +17,7 @@ let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
 
 if(window.location.href.includes('ch1-Animals')){ //first page
-    sessionStorage.setItem('score', 0)
+    sessionStorage.setItem('score', 0);
 }
 
 let score; 
@@ -41,7 +33,7 @@ function setScore(){  //show score and save score to sessionStorage
     sessionStorage.setItem('score', score)
 }
 
-getScore() 
+getScore();
 
 
 
@@ -78,6 +70,7 @@ function gameTimer() {
             let goT = document.getElementById("game-over-time");
             goT.style.visibility = "visible";
             gameOverPop.classList.add("show");
+            sessionStorage.clear();
         }
     }, 1000);
 }
@@ -206,6 +199,7 @@ function gameOver() {
         let goS = document.getElementById("game-over-score");
         goS.style.visibility = "visible";
         gameOverPop.classList.add("show");
+        sessionStorage.clear();
     };
 }
 
