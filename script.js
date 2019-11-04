@@ -19,6 +19,9 @@ let matchedCard = document.getElementsByClassName("match");
 if(window.location.href.includes('ch1-Animals')){ //first page
     sessionStorage.setItem('score', 0);
 }
+if(window.location.href.includes('ad1-Netflix')){ //first page
+    sessionStorage.setItem('score', 0);
+}
 
 let score; 
 function getScore() {
