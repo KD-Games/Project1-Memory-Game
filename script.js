@@ -8,12 +8,15 @@ let firstCard, secondCard;
 
 
 let score = 10;
+let scoreFinal = 12;
+console.log("This Score is " + score);
+console.log("This Storage value is " +sessionStorage['scoreSession']);
 
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
 
-scoreField.innerText = score; 
-scoreFieldPopup.innerText = score; 
+// scoreField.innerText = score; 
+// scoreFieldPopup.innerText = score; 
 
 let congratulationsPop = document.getElementById("popup1");
 let gameOverPop = document.getElementById("popup2");
@@ -143,8 +146,11 @@ function unflipCards(){
         resetBoard();
     }, 1500); 
     score -= 5;
-    scoreField.innerText = score;
-    scoreFieldPopup.innerText = score;
+    scoreSession -= 5;
+    // scoreField.innerText = score;
+    scoreField.innerText = scoreSession;
+    // scoreFieldPopup.innerText = score;
+    scoreFieldPopup.innerText = scoreSession;
 }
 
 
@@ -179,8 +185,8 @@ nextLevelButton.addEventListener('click', savedScore);
 
 function savedScore (){
 
-if (sessionStorage.getItem(score)){
-    let scoreSession = parseInt(sessionStorage.setItem('scoreSession',score));
+if (sessionStorage.getItem("scoreSession")){
+    scoreSession = parseInt(sessionStorage.getItem("scoreSession")) + scoreFinal;
 }
 let finalScore = sessionStorage.getItem('scoreSession'); 
 
@@ -195,9 +201,15 @@ if (sessionStorage.getItem("scoreSession")) { //check if the value is already st
     // Restore the contents of the text field
     console.log(sessionStorage, sessionStorage.getItem("scoreSession"));
     scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
-    scoreField.innerText = scoreSession;
+    // score = scoreSession;
+    scoreField.innerText = scoreSession; 
+    scoreFieldPopup.innerText = scoreSession; 
+    console.log("This Score is " + score);
+  console.log("This Storage value is " + sessionStorage['scoreSession']);
   }
 
+//   console.log("This Score is " + score);
+//   console.log("This Storage value is " + sessionStorage['scoreSession']);
  
 
 
