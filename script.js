@@ -8,7 +8,6 @@ let firstCard, secondCard;
 
 
 let score = 10;
-// let scoreFinal = sessionStorage.getItem('scoreSession');
 
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
@@ -180,21 +179,21 @@ nextLevelButton.addEventListener('click', savedScore);
 
 function savedScore (){
 
-if (sessionStorage.getItem("scoreSession")){
-    scoreSession = parseInt(sessionStorage.getItem("scoreSession")) + score;
+if (sessionStorage.getItem(score)){
+    let scoreSession = parseInt(sessionStorage.setItem('scoreSession',score));
 }
-sessionStorage.setItem('scoreSession', scoreSession); 
+let finalScore = sessionStorage.getItem('scoreSession'); 
 
 //sessionStorage['scoreSession'] = score;
 // alert(sessionStorage['scoreSession']);
 
-return score;
-
+return finalScore;
+console.log(finalScore);
 }
 
 if (sessionStorage.getItem("scoreSession")) { //check if the value is already stored in the sessionStorage
     // Restore the contents of the text field
-    console.log(sessionStorage, sessionStorage.getItem("scoreSession"))
+    console.log(sessionStorage, sessionStorage.getItem("scoreSession"));
     scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
     scoreField.innerText = scoreSession;
   }
