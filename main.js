@@ -21,7 +21,7 @@ childrenPopButton.addEventListener('click', function (){
 });
 
 
-
+//Same below for Adults
 
 let adultButton = document.getElementById('adult');
 let adultPopButton = document.getElementById('start-adult');

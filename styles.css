@@ -20,6 +20,10 @@ body{
 a{
     text-decoration: none;
 }
+/* img {
+    width: 100%;
+    height: auto;
+} */
 
 
 .score-section{
@@ -124,6 +128,7 @@ a{
     height: 252px;
     background: rgba(0,0,0,.5);
     position: absolute;
+
 }
 .avoid-clicks {
     pointer-events: none;
