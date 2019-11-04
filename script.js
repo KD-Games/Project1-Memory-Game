@@ -178,12 +178,14 @@ let nextLevelButton = document.querySelector("#next-level");
 nextLevelButton.addEventListener('click',savedScore);
 
 function savedScore (){
-let scoreSession = 0;
+let scoreSession = 10;
 sessionStorage.setItem('scoreSession', score); 
 scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
-scoreSession += scoreSession;
+// scoreSession = 'test';
+// scoreSession += scoreSession;
+score = scoreSession;
 
-return scoreSession;
+return score;
 
 }
 
