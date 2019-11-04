@@ -26,20 +26,25 @@ a{
 } */
 
 header {
-    width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     padding: 25px 0 10px;
 }
+header.child-container {
+    width: 600px;
+}
+header.adultcontainer {
+    width: 800px;
+}
 .score-section{ 
     display: flex;
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    width: 40%;
     padding: 20px 0;
+    margin-right: 20px;
 }
 #countdown{
     color:white;
@@ -71,14 +76,22 @@ header {
 
 /*Card layout */
 .cards-container{
-    width: 600px;
-    height: 520px;
+    /* width: 600px;
+    height: 520px; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-content: flex-start;
     margin: 0 auto;
     /* perspective: 1000px; */
+}
+.childgame-container {
+    width: 600px;
+    height: 520px;
+}
+.adultgame-container {
+    width:800px;
+    height:640px;  
 }
 .memory-card {
     position:relative;
@@ -106,12 +119,7 @@ header {
 }
 .netflixsize {
     width: 120px;
-    height: 164px; 
-}
-.netflix-container{
-    margin-top:30px;
-    width:800px;
-    height:640px;  
+    height: 178px; 
 }
 /* .disneycontainer{
     margin-top:20px;
@@ -152,11 +160,6 @@ header {
     height: 100%;
     backface-visibility: hidden;
 }
-/* .front-card {
-    transform: rotateY(180deg);
-    opacity: 1;
-    background-color: black;
-} */
 .front-card {
     transform: rotateY(180deg);
     opacity: 1;
@@ -191,6 +194,13 @@ header {
 .toysize.x .overlay {
     width: 100%;
     height: 154px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 20;
+}
+.netflixsize.x .overlay {
+    width: 100%;
+    height: 178px;
     background: rgba(0, 0, 0, .5);
     position: absolute;
     z-index: 20;
