@@ -8,7 +8,7 @@ let firstCard, secondCard;
 
 
 let score = 10;
-let scoreFinal = 12;
+let scoreFinal = 10;
 console.log("This Score is " + score);
 console.log("This Storage value is " +sessionStorage['scoreSession']);
 
@@ -181,20 +181,25 @@ function goBack() {
 
 let nextLevelButton = document.querySelector("#next-level");
 
-nextLevelButton.addEventListener('click', savedScore);
+nextLevelButton.addEventListener('click', saveScore);
 
-function savedScore (){
+function saveScore (){
 
 if (sessionStorage.getItem("scoreSession")){
-    scoreSession = parseInt(sessionStorage.getItem("scoreSession")) + scoreFinal;
+sessionStorage.setItem("scoreSession",score);
+const test = sessionStorage.getItem("scoreSession");
+console.log(test);
 }
-let finalScore = sessionStorage.getItem('scoreSession'); 
 
+test = parseInt(sessionStorage.getItem("scoreSession")) + scoreFinal;
+
+ console.log(test);
+ scoreField.innerText = test; 
 //sessionStorage['scoreSession'] = score;
 // alert(sessionStorage['scoreSession']);
 
-return finalScore;
-console.log(finalScore);
+// return scoreSession;
+// console.log(scoreSession);
 }
 
 if (sessionStorage.getItem("scoreSession")) { //check if the value is already stored in the sessionStorage
