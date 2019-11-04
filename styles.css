@@ -25,9 +25,7 @@ a{
     height: auto;
 } */
 
-
-.score-section{
-   
+.score-section{ 
     display: flex;
     font-size: 20px;
     align-items: center;
@@ -67,77 +65,129 @@ a{
 
 /*Card layout */
 .cards-container{
+    width: 600px;
+    height: 520px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-content: flex-start;
     margin: 0 auto;
-    perspective: 1000px;
+    /* perspective: 1000px; */
 }
-
 .memory-card {
     position:relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .5s;
+    perspective: 500px;
+    margin-bottom: 20px;
 }
-.animalcontainer{
+/* .animalcontainer{
     width:600px;
     height:520px;
-}
+} */
 .animalsize {
-    width:180px;
-    height:252px;
+    width: 180px;
+    height: 252px;
 }
-.disneycontainer{
+.disneysize {
+    width: 140px;
+    height: 196px;
+}
+.toysize {
+    width: 110px;
+    height: 154px;
+}
+.netflixsize {
+    width: 120px;
+    height: 164px; 
+}
+.netflix-container{
+    margin-top:30px;
+    width:800px;
+    height:640px;  
+}
+/* .disneycontainer{
     margin-top:20px;
     width:800px;
     height:620px;
-}
-.disneysize {
-    width: 24.5%;
-    height: auto;
-}
-.toycontainer{
+} */
+/* .toycontainer{
     margin-top:20px;
     width:1000px;
     height:620px;
-}
-.toysize {
-    width: 19.5%;
-    height: auto;
-}
-
-.netflixcontainer{
-    width:600px;
-    height:520px;
-}
-.netflixsize {
-  
-}
-
-.memory-card:active {
+} */
+/* .memory-card:active {
     transform: scale(.97);
     transition: transform .2s;
 }
 .memory-card.flip {
     transform: rotateY(180deg);
+} */
+.innercard {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+.innercard:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+.innercard.flip {
+    transform: rotateY(180deg);
 }
 .front-card, .back-card {
+    display: block;
     position: absolute;
-    backface-visibility: hidden; 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
 }
-.front-card {
+/* .front-card {
     transform: rotateY(180deg);
     opacity: 1;
     background-color: black;
+} */
+.front-card {
+    transform: rotateY(180deg);
+    opacity: 1;
 }
+.back-card {
+    transform: rotateY(0deg);
+    opacity: 1;
+    background-color: black;
+}
+    
 
-.x .overlay{
+/* .x .overlay{
     width:100%;
     height: 252px;
     background: rgba(0,0,0,.5);
     position: absolute;
-
+} */
+.animalsize.x .overlay {
+    width: 100%;
+    height: 252px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 200;
+}
+.disneysize.x .overlay {
+    width: 100%;
+    height: 196px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 20;
+}
+.toysize.x .overlay {
+    width: 100%;
+    height: 154px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 20;
 }
 .avoid-clicks {
     pointer-events: none;
