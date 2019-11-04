@@ -6,10 +6,10 @@ let lockBoard = false;
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
-let score = 10;
+
+let score = 10 ;
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
-
 scoreField.innerText = score; 
 scoreFieldPopup.innerText = score; 
 
@@ -19,8 +19,7 @@ let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
 
 
-  
-  
+
 
 //Initial Timer 
 
@@ -143,6 +142,10 @@ function unflipCards(){
     score -= 5;
     scoreField.innerText = score;
     scoreFieldPopup.innerText = score;
+    
+    sessionStorage.setItem('scoreSession', score); 
+    let scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
+    console.log(scoreSession);
 
 }
 

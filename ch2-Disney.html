@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="countdown"></div>
 <section class="score-section">
     <h1>Score:</h1><span id="score"></span>
 </section>
@@ -90,12 +91,11 @@
             </div>
             <div class="content-2">
                 <p>Sorry you lost &#x2620;</p>
+                <p id="game-over-score"> Your score went below 0!</p>
+                <p id="game-over-time"> You ran out of time!</p>
             </div>
             <button id="try-again" onClick="window.location.reload();">
                 Try Again</a>
-            </button>
-            <button id="back" onclick="goBack()" >
-                Go back</a>
             </button>
         </div>
     </div>

@@ -6,6 +6,7 @@
 
 </head>
 <body>
+<div id="countdown"></div>
 <section class="score-section">
     <h1>Score:</h1><span id="score"></span>
 </section>
@@ -106,21 +107,20 @@
     </div>
 
     <div id="popup2" class="panel-overlay">
-        <div class="popup">
-            <div class="content-1">
-                <h2>Game Over!</h2>
+            <div class="popup">
+                <div class="content-1">
+                    <h2>Game Over!</h2>
+                </div>
+                <div class="content-2">
+                    <p>Sorry you lost &#x2620;</p>
+                    <p id="game-over-score"> Your score went below 0!</p>
+                    <p id="game-over-time"> You ran out of time!</p>
+                </div>
+                <button id="try-again" onClick="window.location.reload();">
+                    Try Again</a>
+                </button>
             </div>
-            <div class="content-2">
-                <p>Sorry you lost &#x2620;</p>
-            </div>
-            <button id="try-again" onClick="window.location.reload();">
-                Try Again</a>
-            </button>
-            <button id="back" onclick="goBack()" >
-                Go back</a>
-            </button>
         </div>
-    </div>
     
     
 </div>

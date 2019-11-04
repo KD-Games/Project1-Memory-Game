@@ -2,44 +2,90 @@
 <html>
 <head>
 <title>Memory Game - Netflix</title>
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-<section>
-    <h1>Score:</h1><span>100</span>
-</section>
-<div>
-<div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+<div id="countdown"></div>
+<div class="score-section">
+ <h1>Score:</h1> <span id="score"></span>
 </div>
 
-<div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+
+
+
+<div class="cards-container animalcontainer">
+
+<div class="memory-card animalsize" data-framework="black-mirror">
+     <span class="overlay"></span> 
+     <img class="front-card" src="images/netflix/black-mirror.jpg" alt="black-mirror">
+     <img class="back-card"  src="images/netflix/netflix-back.png" alt="netflix">
+</div>
+
+<div class="memory-card animalsize" data-framework="black-mirror"> 
+        <span class="overlay"></span> 
+        <img class="front-card" src="images/netflix/black-mirror.jpg" alt="deer">
+        <img class="back-card"  src="images/netflix/netflix-back.png" alt="netflix">
+</div>
+<div class="memory-card animalsize" data-framework="koala"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/netflix/Luke_Cage_card.jpg" alt="Luke_Cage_card">
+        <img class="back-card"  src="images/netflix/netflix-back.png" alt="netflix">
+</div>
+<div class="memory-card animalsize" data-framework="Luke_Cage_card"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/netflix/Luke_Cage_card.jpg" alt="Luke_Cage_card">
+        <img class="back-card"  src="images/netflix/netflix-back.png" alt="netflix">
+</div>
+<div class="memory-card animalsize" data-framework="orange"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/netflix/orange.jpg" alt="orange">
+        <img class="back-card"  src="images/netflix/netflix-back.png" alt="netflix">
+</div>
+<div class="memory-card animalsize" data-framework="orange"> 
+                <span class="overlay"></span> 
+
+        <img class="front-card" src="images/netflix/orange.jpg" alt="orange">
+        <img class="back-card"  src="images/netflix/netflix-back.png" alt="netflix">
+</div>
+
+<div id="popup1" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Congratulations 🎉</h2>
+                <p>You're a winner 🎉🎉</p>
             </div>
+            <div class="content-2">
+                <p>Your score is <span id="score-pop"></span></p>
+                <p>Time to go to next level!</p>
+            </div>
+            <button id="next-level" type="button"><a href="ch2-Disney.html">Next Level</a></button>
+        </div>
+    </div>
 
+    <div id="popup2" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Game Over!</h2>
+            </div>
+            <div class="content-2">
+                <p>Sorry you lost &#x2620;</p>
+                <p id="game-over-score"> Your score went below 0!</p>
+                <p id="game-over-time"> You ran out of time!</p>
+            </div>
+            <button id="try-again" onClick="window.location.reload();">
+                Try Again</a>
+            </button>
+        </div>
+    </div>
+
+    
+    
 </div>
 
-
+<script src="script.js"></script>  
 </body>
 </html>
