@@ -70,11 +70,12 @@ a{
     perspective: 1000px;
 }
 
-.memory-card {
+.memory-card {
     position:relative;
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .5s;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    perspective: 500px;
 }
 .animalcontainer{
     width:600px;
