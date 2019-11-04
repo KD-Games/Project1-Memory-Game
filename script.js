@@ -7,10 +7,6 @@ let firstCard, secondCard;
 
 //let score = 10;
 // let scoreFinal = 12;
-// console.log("This Score is " + score);
-// console.log("This Storage value is " + sessionStorage['scoreSession']);
-
-
 
 
 let scoreField = document.getElementById('score');
