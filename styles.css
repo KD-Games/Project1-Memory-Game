@@ -106,6 +106,15 @@ a{
     width: 19.5%;
     height: auto;
 }
+
+.netflixcontainer{
+    width:600px;
+    height:520px;
+}
+.netflixsize {
+  
+}
+
 .memory-card:active {
     transform: scale(.97);
     transition: transform .2s;
