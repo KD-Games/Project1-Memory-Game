@@ -7,9 +7,11 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 
-let score = 10 ;
+let score = 10;
+
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
+
 scoreField.innerText = score; 
 scoreFieldPopup.innerText = score; 
 
@@ -131,6 +133,7 @@ function disableCards(){
     resetBoard();
 }
 
+
 function unflipCards(){
  lockBoard = true;
     setTimeout(() => {
@@ -142,12 +145,8 @@ function unflipCards(){
     score -= 5;
     scoreField.innerText = score;
     scoreFieldPopup.innerText = score;
-    
-    sessionStorage.setItem('scoreSession', score); 
-    let scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
-    console.log(scoreSession);
-
 }
+
 
 function resetBoard(){
     [hasFlippedCard, lockBoard] = [false, false];
@@ -172,6 +171,23 @@ function goBack() {
     window.history.back();
   }
 
+
+
+let nextLevelButton = document.querySelector("#next-level");
+
+nextLevelButton.addEventListener('click',savedScore);
+
+function savedScore (){
+let scoreSession = 0;
+sessionStorage.setItem('scoreSession', score); 
+scoreSession = parseInt(sessionStorage.getItem("scoreSession"));
+scoreSession += scoreSession;
+
+return scoreSession;
+
+}
+
+ 
 
 
 initialFlip();
