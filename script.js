@@ -1,3 +1,4 @@
+
 let cards = document.querySelectorAll('.innercard');
 let lockBoard = false;
 
@@ -46,8 +47,7 @@ function getScore() {
 function setScore(){  //show score and save score to sessionStorage 
     scoreField.innerText = score;
     scoreFieldPopup.innerText = score;
-    sessionStorage.setItem('score', score)
-    console.log(score);
+    sessionStorage.setItem('score', score);
 }
 getScore();
 

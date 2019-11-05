@@ -2,48 +2,208 @@
 <html>
 <head>
 <title>Memory Game - Celebrities</title>
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-<section>
-    <h1>Score:</h1><span>100</span>
-</section>
-<div>
-<div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+        <header class="adultcontainer">
+                <div id="countdown"></div>
+                <div class="score-section">
+                        <h1>Score:</h1> <span id="score"></span>
+                </div>
+        </header>
+
+<div class="cards-container adultgame-container">
+
+<div class="memory-card brandssize" data-framework="albert">
+     <span class="overlay"></span> 
+     <div class="innercard">
+     <img class="front-card" src="images/celebrities/albert.jpg" alt="albert">
+     <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
 </div>
 
-<div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+<div class="memory-card brandssize" data-framework="albert"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/albert.jpg" alt="albert">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="chuck"> 
+                <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/chuck.jpg" alt="chuck">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="chuck"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/chuck.jpg" alt="chuck">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"> </div>
+</div>
+<div class="memory-card brandssize" data-framework="diana"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/celebrities/diana.jpg" alt="diana">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="diana"> 
+    <span class="overlay"></span> 
+    <div class="innercard">
+        <img class="front-card" src="images/celebrities/diana.jpg" alt="diana">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="elizabeth"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/elizabeth.jpg" alt="elizabeth">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="elizabeth"> 
+                <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/elizabeth.jpg" alt="elizabeth">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="elvis"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/elvis.jpg" alt="elvis">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"> </div>
+</div>
+<div class="memory-card brandssize" data-framework="elvis"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+       <img class="front-card" src="images/celebrities/elvis.jpg" alt="elvis">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="johnny"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/johnny.jpg" alt="johnny">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="johnny"> 
+                <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/johnny.jpg" alt="johnny">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="lucy-liu"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/lucy-liu.jpg" alt="lucy-liu">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"> </div>
+</div>
+<div class="memory-card brandssize" data-framework="lucy-liu"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/celebrities/lucy-liu.jpg" alt="lucy-liu">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="marilyn-monroe"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/celebrities/marilyn-monroe.jpg" alt="marilyn-monroe">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="marilyn-monroe"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/celebrities/marilyn-monroe.jpg" alt="marilyn-monroe">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="orlando"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/celebrities/orlando.jpg" alt="orlando">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="orlando"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/celebrities/orlando.jpg" alt="orlando">
+        <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+</div>
+<div class="memory-card brandssize" data-framework="penelope"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+        
+                <img class="front-card" src="images/celebrities/penelope.jpg" alt="penelope">
+                <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
         </div>
-        <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+ <div class="memory-card brandssize" data-framework="penelope"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+        
+                <img class="front-card" src="images/celebrities/penelope.jpg" alt="penelope">
+                <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+        </div>
+<div class="memory-card brandssize" data-framework="Whoopi-Goldberg"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                
+                <img class="front-card" src="images/celebrities/Whoopi-Goldberg.jpg" alt="Whoopi-Goldberg">
+                <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+        </div>
+<div class="memory-card brandssize" data-framework="Whoopi-Goldberg"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                
+                <img class="front-card" src="images/celebrities/Whoopi-Goldberg.jpg" alt="Whoopi-Goldberg">
+                <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+                </div>
+<div class="memory-card brandssize" data-framework="will"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                        
+                <img class="front-card" src="images/celebrities/will.jpg" alt="will">
+                <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+                        </div>
+<div class="memory-card brandssize" data-framework="will"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                        
+                <img class="front-card" src="images/celebrities/will.jpg" alt="will">
+                <img class="back-card"  src="images/celebrities/celebrities-back.jpg" alt="celebrities"></div>
+                        </div>
+<div id="popup1" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Congratulations 🎉</h2>
+                <p>You're a winner 🎉🎉</p>
             </div>
+            <div class="content-2">
+                <p>Your score is <span id="score-pop"></span></p>
+                <p>Time to go to next level!</p>
+            </div>
+            <button id="next-level" type="button"><a href="ch2-Disney.html">Next Level</a></button>
+        </div>
+    </div>
 
+    <div id="popup2" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Game Over!</h2>
+            </div>
+            <div class="content-2">
+                <p>Sorry you lost &#x2620;</p>
+                <p id="game-over-score"> Your score went below 0!</p>
+                <p id="game-over-time"> You ran out of time!</p>
+            </div>
+            <button id="try-again" onClick="window.location.reload();">
+                Try Again</a>
+            </button>
+        </div>
+    </div>
+
+    
+    
 </div>
 
-
+<script src="script.js"></script>  
 </body>
-</html>

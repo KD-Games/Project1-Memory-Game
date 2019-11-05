@@ -1,4 +1,30 @@
 
+let playerName = document.getElementById("fname");
+
+
+
+
+
+playerName.addEventListener('change', function(e){
+let pN = e.target.value;
+sessionStorage.setItem('player', JSON.stringify(pN));
+
+setName();
+});
+
+let Player = {
+    name:"",
+    score: 0
+  }
+function setName(){  
+    let newObj = sessionStorage.getItem('player');
+    Player.name = newObj;
+    console.log(Player);
+    }
+
+
+
+
 // assigning children button element to variable: childrenButton
 //assigning game start popup to variable: childrenPopButton
 //assigning I'm ready popup button to variable: childrenPop
