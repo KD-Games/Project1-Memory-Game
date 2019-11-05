@@ -6,6 +6,10 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 
+//let score = 10;
+// let scoreFinal = 12;
+
+
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
 
