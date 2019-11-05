@@ -32,7 +32,7 @@ if(window.location.href.includes('ch1-Animals')){ //first page
 // }
 
 if(window.location.href.includes('ad1-Netflix')){ //first page
-    sessionStorage.setItem('score', 0);
+    sessionStorage.setItem('score', 20);
 }
 
 let score; 
@@ -86,7 +86,7 @@ let initialTimer = setInterval(function () {
         clearInterval(initialTimer);
         document.getElementById("countdown").innerHTML = "GO!";
 
-        gameTimer(); // after initial timwe ends, starts Game timer
+        gameTimer(); // after initial timer ends, starts Game timer
 
     }
 }, 1000);
@@ -105,6 +105,7 @@ function gameTimer() {
         }
         if (timeLeft < 0) {
             countdown.style.backgroundColor = "red";
+            countdown.style.color = "black";
             let goT = document.getElementById("game-over-time");
             goT.style.visibility = "visible";
             gameOverPop.classList.add("show");
