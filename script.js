@@ -9,6 +9,7 @@ let firstCard, secondCard;
 //let score = 10;
 let scoreFinal = 10;
 let timeFinal = 20;
+let score; 
 
 
 let scoreField = document.getElementById('score');
@@ -22,6 +23,8 @@ let gameOverPop = document.getElementById("popup2");
 let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
 
+
+
 if(window.location.href.includes('ch1-Animals')){ //first page
     sessionStorage.setItem('score', 10);
     sessionStorage.setItem('timeLeft', 30);
@@ -32,7 +35,7 @@ if(window.location.href.includes('ad1-Netflix')){ //first page
     sessionStorage.setItem('timeLeft', 30);
 }
 
-let score; 
+// let score; 
 function getScore() {
     score = sessionStorage.getItem('score');
     score = Number(score);
@@ -78,9 +81,6 @@ let initialTimer = setInterval(function () {
 
     }
 }, 1000);
-
-
-
 
 let timeLeft; 
 
@@ -166,8 +166,6 @@ function loadAnotherFlip() {
 }
 ////////////////////////////////////////////////////////////
 
-
-
 function flipCard() {
 
     if (lockBoard) return;
@@ -242,7 +240,6 @@ function congratulations() {
 function goBack() {
     window.history.back();
 }
-
 
 
 initialFlip();
