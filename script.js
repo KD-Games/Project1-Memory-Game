@@ -6,7 +6,7 @@ let firstCard, secondCard;
 
 
 //let score = 10;
-// let scoreFinal = 12;
+let scoreFinal = 12;
 
 
 let scoreField = document.getElementById('score');
@@ -21,16 +21,25 @@ let closeicon = document.querySelector(".close");
 let matchedCard = document.getElementsByClassName("match");
 
 if(window.location.href.includes('ch1-Animals')){ //first page
-    sessionStorage.setItem('score', 0);
+     console.log('looking at local storage')
+     console.log(sessionStorage)
+    sessionStorage.setItem('score', 10);
 }
+// if(window.location.href.includes('ch2-Disney.html')){ //first page
+//     console.log(sessionStorage)
+//     sessionStorage.setItem('score', 10);
+// }
+
 if(window.location.href.includes('ad1-Netflix')){ //first page
     sessionStorage.setItem('score', 0);
 }
 
 let score; 
 function getScore() {
-    score = sessionStorage.getItem('score')
-    score = Number(score) + 10;  //When i get to a new page i add ten to the score 
+    score = sessionStorage.getItem('score');
+    console.log(score);
+    score = Number(score); //+ 10;  //When i get to a new page i add ten to the score 
+    console.log(score);
     setScore() 
 }
 
@@ -38,10 +47,28 @@ function setScore(){  //show score and save score to sessionStorage
     scoreField.innerText = score;
     scoreFieldPopup.innerText = score;
     sessionStorage.setItem('score', score)
+    console.log(score);
 }
-
 getScore();
 
+let nextLevelButton = document.querySelector("#next-level");
+
+nextLevelButton.addEventListener('click', savedScore);
+
+function savedScore (){
+    score = sessionStorage.getItem('score');
+    score = Number(score) + scoreFinal;
+    setScore();
+}
+
+function reloadScore (){
+    // score = 10;
+    // setScore();
+    sessionStorage.setItem('score', 10);
+    // in this function you set score = 10
+    // and then call seScore but the setScore function will not see that you set it = 10 its in a different scope
+    // just re-write this function here to directly set the score in the sessionStorage to 10
+}
 
 
 //Initial Timer 
@@ -77,7 +104,12 @@ function gameTimer() {
             let goT = document.getElementById("game-over-time");
             goT.style.visibility = "visible";
             gameOverPop.classList.add("show");
-            sessionStorage.clear();
+            // sessionStorage.clear();
+            // why do you clear the whole storage when you get it wromg?
+            // shouldnt you just subtract 10 here?
+            reloadScore();
+            // but reload score does not subtract 10
+            // it sets it equal to 10 even if you have 500
         }
     }, 1000);
 }
@@ -165,10 +197,7 @@ function unflipCards() {
         resetBoard();
     }, 1500);
     score -= 5;
-    //scoreSession -= 5;
-    // scoreField.innerText = score;
     setScore()
-
 }
 
 
@@ -185,6 +214,7 @@ function resetBoard() {
 })();
 
 function congratulations() {
+    // i think this is where you should add to the score because this is the moment when the user accomplishes the goal
     if (matchedCard.length == cards.length) {
         //show congratulations congratulationsPop
         congratulationsPop.classList.add("show");
@@ -202,6 +232,7 @@ flipBack();
 
 
 function gameOver() {
+    
     if (score < 0) {
         let goS = document.getElementById("game-over-score");
         goS.style.visibility = "visible";
