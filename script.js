@@ -26,6 +26,7 @@ if(window.location.href.includes('ch1-Animals')){ //first page
      console.log('looking at local storage')
      console.log(sessionStorage)
     sessionStorage.setItem('score', 10);
+    sessionStorage.setItem('timeLeft', 30);
 }
 // if(window.location.href.includes('ch2-Disney.html')){ //first page
 //     console.log(sessionStorage)
@@ -57,7 +58,7 @@ let nextLevelButton = document.querySelector("#next-level");
 
 if(nextLevelButton){
     nextLevelButton.addEventListener('click', savedScore);
-    nextLevelButton.addEventListener('click', getTimeLeft);
+    nextLevelButton.addEventListener('click', addTimeLeft);
 }
 
 function savedScore (){
@@ -94,18 +95,20 @@ let initialTimer = setInterval(function () {
 }, 1000);
 
 
-if(window.location.href.includes('ch1-Animals')){ //first page
-   sessionStorage.setItem('timeLeft', 30);
-}
+
 
 let timeLeft; 
 
 function getTimeLeft() {
     timeLeft = sessionStorage.getItem('timeLeft');
-    timeLeft = Number(timeLeft) + timeFinal; //+ 10;  //When i get to a new page i add ten to the score 
+    timeLeft = Number(timeLeft); //+ 10;  //When i get to a new page i add ten to the score 
     gameTimer();
 }
 
+function addTimeLeft() {
+    timeLeft = sessionStorage.getItem('timeLeft');
+    timeLeft = Number(timeLeft) + timeFinal; 
+}
 
 //Game Timer
 
@@ -115,9 +118,11 @@ function gameTimer() {
         let countdown = document.getElementById("countdown");
         countdown.innerHTML = timeLeft;
         timeLeft -= 1;
-        if(matchedCard.length == cards.length){
-            console.log(timeLeft);
+        
+            
+    if(matchedCard.length == cards.length){
             sessionStorage.setItem('timeLeft', timeLeft);
+            
         }
         if (timeLeft <= -1 || score < 0 || matchedCard.length == cards.length) {
             clearInterval(beginTimer);
