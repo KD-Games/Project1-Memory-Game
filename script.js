@@ -53,7 +53,11 @@ getScore();
 
 let nextLevelButton = document.querySelector("#next-level");
 
-nextLevelButton.addEventListener('click', savedScore);
+
+if(nextLevelButton){
+    nextLevelButton.addEventListener('click', savedScore);
+}
+
 
 function savedScore (){
     score = sessionStorage.getItem('score');
@@ -240,6 +244,10 @@ function gameOver() {
         sessionStorage.clear();
     };
 }
+
+
+
+console.log('this is at the bottom of the file lets see if we see this or if the error is preventing the file from getting this far')
 
 
 cards.forEach(card => {

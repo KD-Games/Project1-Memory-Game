@@ -272,6 +272,15 @@ header.adultcontainer {
     margin-bottom: 30px;
 }
 .popup button {
+    font-size: 1.2em;
+    border-radius: 5px;
+    color: white;
+    background-color: #4CAF50;
+    transition: all 1s;
+    cursor: pointer;
+}
+.popup a {
+    color: #ffffff;
     padding: 10px 15px;
     font-size: 1.2em;
     border-radius: 5px;
@@ -280,10 +289,7 @@ header.adultcontainer {
     transition: all 1s;
     cursor: pointer;
 }
-.popup button a {
-    color: #ffffff;
-}
-.popup button:hover {
+.popup a:hover {
     background-color: green;
 }
 
