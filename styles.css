@@ -238,6 +238,13 @@ color:black;
     position: absolute;
     z-index: 20;
 }
+.brandssize.x .overlay {
+    width: 100%;
+    height: 148px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 20;
+}
 .avoid-clicks {
     pointer-events: none;
   }
