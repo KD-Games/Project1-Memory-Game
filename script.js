@@ -109,11 +109,7 @@ function gameTimer() {
             goT.style.visibility = "visible";
             gameOverPop.classList.add("show");
             // sessionStorage.clear();
-            // why do you clear the whole storage when you get it wromg?
-            // shouldnt you just subtract 10 here?
             reloadScore();
-            // but reload score does not subtract 10
-            // it sets it equal to 10 even if you have 500
         }
     }, 1000);
 }
