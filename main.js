@@ -5,22 +5,22 @@ let playerName = document.getElementById("fname");
 
 
 
-// playerName.addEventListener('change', function(e){
-// let pN = e.target.value;
-// sessionStorage.setItem('player', JSON.stringify(pN));
+playerName.addEventListener('change', function(e){
+let pN = e.target.value;
+localStorage.setItem('player', JSON.stringify(pN));
+setName();
 
-// setName();
-// });
+});
 
-// let Player = {
-//     name:"",
-//     score: 0
-//   }
-// function setName(){  
-//     let newObj = sessionStorage.getItem('player');
-//     Player.name = newObj;
-//     console.log(Player);
-//     }
+let Player =
+    {  name:"",
+       score: 0 };
+
+    function setName(){  
+    let newObj = localStorage.getItem('player');
+    newObj = JSON.parse(newObj);
+    Player.name = newObj;
+    }
 
 
 
