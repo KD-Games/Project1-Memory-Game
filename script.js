@@ -7,7 +7,7 @@ let firstCard, secondCard;
 
 
 //let score = 10;
-let scoreFinal = 12;
+let scoreFinal = 10;
 let timeFinal = 20;
 
 
