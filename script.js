@@ -8,6 +8,7 @@ let firstCard, secondCard;
 
 //let score = 10;
 let scoreFinal = 12;
+let timeFinal = 20;
 
 
 let scoreField = document.getElementById('score');
@@ -56,6 +57,7 @@ let nextLevelButton = document.querySelector("#next-level");
 
 if(nextLevelButton){
     nextLevelButton.addEventListener('click', savedScore);
+    nextLevelButton.addEventListener('click', getTimeLeft);
 }
 
 
@@ -64,6 +66,7 @@ function savedScore (){
     score = Number(score) + scoreFinal;
     setScore();
 }
+
 
 function reloadScore (){
     // score = 10;
@@ -86,20 +89,37 @@ let initialTimer = setInterval(function () {
         clearInterval(initialTimer);
         document.getElementById("countdown").innerHTML = "GO!";
 
-        gameTimer(); // after initial timer ends, starts Game timer
+        getTimeLeft(); // after initial timer ends, starts Game timer
 
     }
 }, 1000);
 
+
+if(window.location.href.includes('ch1-Animals')){ //first page
+   sessionStorage.setItem('timeLeft', 30);
+}
+
+let timeLeft; 
+
+function getTimeLeft() {
+    timeLeft = sessionStorage.getItem('timeLeft');
+    timeLeft = Number(timeLeft) + timeFinal; //+ 10;  //When i get to a new page i add ten to the score 
+    gameTimer();
+}
+
+
 //Game Timer
 
-let timeLeft = 20;
 
 function gameTimer() {
     let beginTimer = setInterval(function () {
         let countdown = document.getElementById("countdown");
         countdown.innerHTML = timeLeft;
         timeLeft -= 1;
+        if(matchedCard.length == cards.length){
+            console.log(timeLeft);
+            sessionStorage.setItem('timeLeft', timeLeft);
+        }
         if (timeLeft <= -1 || score < 0 || matchedCard.length == cards.length) {
             clearInterval(beginTimer);
         }
