@@ -13,7 +13,7 @@ let timeFinal = 20;
 
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
-
+let timeFieldPopup = document.getElementById('time-pop');
 // scoreField.innerText = score; 
 // scoreFieldPopup.innerText = score; 
 
@@ -111,9 +111,10 @@ function gameTimer() {
         timeLeft -= 1;
         if(matchedCard.length == cards.length){ //stop the timer when you win
             console.log(timeLeft);
+            timeFieldPopup.innerText = timeLeft +" seconds.";
             setTimeLeft();
             sessionStorage.setItem('timeLeft', timeLeft);
-            
+        
         }
         if (timeLeft <= -1 || score < 0 || matchedCard.length == cards.length) {
             clearInterval(beginTimer);
