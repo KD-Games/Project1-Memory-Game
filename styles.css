@@ -302,6 +302,7 @@ color:black;
 }
 .popup button {
     font-size: 1.2em;
+    padding: 10px 15px;
     border-radius: 5px;
     color: white;
     background-color: #4CAF50;

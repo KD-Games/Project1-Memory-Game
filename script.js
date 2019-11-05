@@ -60,7 +60,6 @@ if(nextLevelButton){
     nextLevelButton.addEventListener('click', getTimeLeft);
 }
 
-
 function savedScore (){
     score = sessionStorage.getItem('score');
     score = Number(score) + scoreFinal;
