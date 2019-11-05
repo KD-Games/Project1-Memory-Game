@@ -2,59 +2,208 @@
 <html>
 <head>
 <title>Memory Game - Movies</title>
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-<section>
-    <h1>Score:</h1><span>100</span>
-</section>
-<div>
-<div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-
-<div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+        <header class="adultcontainer">
+                <div id="countdown"></div>
+                <div class="score-section">
+                        <h1>Score:</h1> <span id="score"></span>
                 </div>
-                <div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                <div>
-                  
+        </header>
+
+<div class="cards-container adultgame-container">
+
+<div class="memory-card brandssize" data-framework="breakfast">
+     <span class="overlay"></span> 
+     <div class="innercard">
+     <img class="front-card" src="images/movies/breakfast.jpg" alt="breakfast">
+     <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
 </div>
 
+<div class="memory-card brandssize" data-framework="breakfast"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/breakfast.jpg" alt="breakfast">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="et"> 
+                <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/et.jpg" alt="et">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="et"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/et.jpg" alt="et">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"> </div>
+</div>
+<div class="memory-card brandssize" data-framework="goonies"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
 
+        <img class="front-card" src="images/movies/goonies.jpg" alt="goonies">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="goonies"> 
+    <span class="overlay"></span> 
+    <div class="innercard">
+        <img class="front-card" src="images/movies/goonies.jpg" alt="goonies">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="home-alone"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/home-alone.jpg" alt="home-alone">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="home-alone"> 
+                <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/home-alone.jpg" alt="home-alone">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="karate"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/karate.jpg" alt="karate">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"> </div>
+</div>
+<div class="memory-card brandssize" data-framework="karate"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+       <img class="front-card" src="images/movies/karate.jpg" alt="karate">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="mary"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/mary.jpg" alt="mary">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="mary"> 
+                <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/mary.jpg" alt="mary">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="princess-bride"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/princess-bride.jpg" alt="princess-bride">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"> </div>
+</div>
+<div class="memory-card brandssize" data-framework="princess-bride"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+        <img class="front-card" src="images/movies/princess-bride.jpg" alt="princess-bride">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="shrek"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/movies/shrek.jpeg" alt="shrek">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="shrek"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/movies/shrek.jpeg" alt="shrek">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="singing"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/movies/singing.jpg" alt="singing">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="singing"> 
+        <span class="overlay"></span> 
+        <div class="innercard">
+
+        <img class="front-card" src="images/movies/singing.jpg" alt="singing">
+        <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+</div>
+<div class="memory-card brandssize" data-framework="star-wars"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+        
+                <img class="front-card" src="images/movies/star-wars.jpg" alt="star-wars">
+                <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+        </div>
+ <div class="memory-card brandssize" data-framework="star-wars"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+        
+                <img class="front-card" src="images/movies/star-wars.jpg" alt="star-wars">
+                <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+        </div>
+<div class="memory-card brandssize" data-framework="wizard"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                
+                <img class="front-card" src="images/movies/wizard.jpg" alt="wizard">
+                <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+        </div>
+<div class="memory-card brandssize" data-framework="wizard"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                
+                <img class="front-card" src="images/movies/wizard.jpg" alt="wizard">
+                <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+                </div>
+<div class="memory-card brandssize" data-framework="wonderful-life"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                        
+                <img class="front-card" src="images/movies/wonderful-life.jpeg" alt="wonderful-life">
+                <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+                        </div>
+<div class="memory-card brandssize" data-framework="wonderful-life"> 
+                <span class="overlay"></span> 
+                <div class="innercard">
+                        
+                <img class="front-card" src="images/movies/wonderful-life.jpeg" alt="wonderful-life">
+                <img class="back-card"  src="images/movies/movies-back.jpg" alt="movies"></div>
+                        </div>
+<div id="popup1" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Congratulations 🎉</h2>
+                <p>You're a winner 🎉🎉</p>
+            </div>
+            <div class="content-2">
+                <p>Your score is <span id="score-pop"></span></p>
+                <p>Time to go to next level!</p>
+            </div>
+            <button id="next-level" type="button"><a href="ch2-Disney.html">Next Level</a></button>
+        </div>
+    </div>
+
+    <div id="popup2" class="panel-overlay">
+        <div class="popup">
+            <div class="content-1">
+                <h2>Game Over!</h2>
+            </div>
+            <div class="content-2">
+                <p>Sorry you lost &#x2620;</p>
+                <p id="game-over-score"> Your score went below 0!</p>
+                <p id="game-over-time"> You ran out of time!</p>
+            </div>
+            <button id="try-again" onClick="window.location.reload();">
+                Try Again</a>
+            </button>
+        </div>
+    </div>
+
+    
+    
+</div>
+
+<script src="script.js"></script>  
 </body>
-</html>
