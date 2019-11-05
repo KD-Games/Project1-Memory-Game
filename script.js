@@ -28,7 +28,7 @@ if(window.location.href.includes('ch1-Animals')){ //first page
 }
 
 if(window.location.href.includes('ad1-Netflix')){ //first page
-    sessionStorage.setItem('score', 20);
+    sessionStorage.setItem('score', 30);
     sessionStorage.setItem('timeLeft', 20);
 }
 
