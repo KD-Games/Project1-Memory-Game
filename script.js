@@ -1,3 +1,4 @@
+
 let cards = document.querySelectorAll('.innercard');
 let lockBoard = false;
 
@@ -27,13 +28,13 @@ let score;
 function getScore() {
     score = sessionStorage.getItem('score')
     score = Number(score) + 10;  //When i get to a new page i add ten to the score 
-    setScore() 
+    setScore();
 }
 
 function setScore(){  //show score and save score to sessionStorage 
     scoreField.innerText = score;
     scoreFieldPopup.innerText = score;
-    sessionStorage.setItem('score', score)
+    sessionStorage.setItem('score', score);
 }
 
 getScore();
