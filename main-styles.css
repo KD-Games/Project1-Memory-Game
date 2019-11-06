@@ -168,5 +168,23 @@ width: 600px;
     box-sizing: border-box;
 }
 .scores-description ol {
-    
+    padding-left: 30px;
+    width: 70%;
+    margin: 0 auto;
+}
+.home-btn {
+    padding: 20px 0;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+}
+.home-btn button {
+    padding: 15px 20px;
+    font-size: 1.4em;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+}
+.home-btn button:hover {
+    background-color: turquoise;
 }
