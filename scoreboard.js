@@ -22,7 +22,9 @@ function highScores() { //populate the <li> with array above
 			// high_names.innerHTML = '';
 
   for(let i=0; i < scores.length; i++){
-  if (parseInt(score) > Number(scores[i]) || scores[i] === "") {
+	  console.log(score);
+	  console.log(scores[i]);
+  if (parseInt(score) > JSON.parse(scores[i]).score || scores[i] === "") {
    let Player =
 	{  name:"",
 	   score: 0,};
@@ -31,21 +33,27 @@ function highScores() { //populate the <li> with array above
 	Player = JSON.stringify(Player);
 
 	scores.splice(i, 0, Player);
-	//scores.length = Math.min(scores.length, 10); //Where 10 is the max scores you want to keep
+	scores.length = Math.min(scores.length, 10); //Where 10 is the max scores you want to keep
 	break;
 			}	
 		}
 		
 	localStorage["high-scores"] = JSON.stringify(scores);
-	localStorage.setItem("high-scores", JSON.stringify(scores));
+	//localStorage.setItem("high-scores", JSON.stringify(scores));
+	
 	console.log(scores);
+
 	
 	//let scorelistArr = JSON.stringify(scores);
 	//let scoreBlah = JSON.parse(scorelistArr)
-        
+	
+	
 	scores = scores.sort((a,b)=>{
-	return JSON.parse(b.score) - JSON.parse(a.score);
-	})
+		b = JSON.parse(b);
+		a = JSON.parse(a);
+		if(a && b)
+			return b.score - a.score;
+	});
 	   
 	for(var i = 0; i < 10; i++){
 	var s = scores[i];						
@@ -55,7 +63,6 @@ function highScores() { //populate the <li> with array above
 	}
 					
 } }
-
 
 
 highScores();
