@@ -6,11 +6,12 @@ function getName(){
     let newName = localStorage.getItem('player');
     newName = JSON.parse(newName);
     return newName;
-    }
-	
+		}
+	// console.log("asd " + getName());
+// console.log("sle " + scores);
 
 localStorage["high-scores"] = JSON.stringify(scores); //add the array to localStorage. Will change to localStorage later
-// console.log(localStorage["high-scores"]);
+//console.log(localStorage["high-scores"]);
 
 
 function highScores() { //populate the <li> with array above
@@ -21,14 +22,17 @@ function highScores() { //populate the <li> with array above
 			// high_names.style.display = "block";
 			// high_names.innerHTML = '';
 
+			console.log("this scorelist is " + JSON.parse(scores[0]).score);
+
   for(let i=0; i < scores.length; i++){
-  if (parseInt(score) > Number(scores[i]) || scores[i] === "") {
+  if (score > Number(scores[i]) || scores[i] === "") {
    let Player =
 	{  name:"",
 	   score: 0,};
-	Player.score = parseInt(score);
+	Player.score = score;
 	Player.name = getName();
 	Player = JSON.stringify(Player);
+	console.log("this is Player score " + JSON.parse(Player).score);
 
 	scores.splice(i, 0, Player);
 	//scores.length = Math.min(scores.length, 10); //Where 10 is the max scores you want to keep
@@ -56,7 +60,7 @@ function highScores() { //populate the <li> with array above
 					
 } }
 
-
+// localStorage.clear();
 
 highScores();
 
