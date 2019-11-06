@@ -10,11 +10,11 @@ h1, h2, h3, h4, h5, h6, p, li, a {
     font-family: 'Jomolhari', serif;
 }
 body{
-    margin: 0;
-    padding: 0;
     display: block;
-    background-image: url(images/bkgd.jpg);
+    background: url(images/bkgd.jpg) no-repeat center center fixed;
     background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
 a{
@@ -354,4 +354,47 @@ color:black;
 .show {
 	visibility: visible !important;
 	opacity: 100 !important;
+}
+
+@media all and (max-width: 767px) {
+    .innercontainer {
+        width: 85%;
+        margin: 0 auto;
+        position: relative;
+    }
+    header.child-container {
+        width: 100%;
+    }
+    header.adultcontainer {
+        width: 100%;
+    }
+    .childgame-container {
+        width: 100%;
+    }
+    .adultgame-container {
+        width: 100%;
+    }
+    .animalsize {
+        width: 31%;
+        height: 31%;
+    }
+    .disneysize {
+        width: 23%;
+        height: 23%;
+    }
+    .toysize {
+        width: 18%;
+        height: 18%;
+    }
+    .netflixsize {
+        width: 15%;
+        height: 13%; 
+    }
+    .brandssize{
+        width: 15.5%;
+        height: 13%;
+    }
+    .popup {
+        width: 80%;
+    }
 }
