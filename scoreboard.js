@@ -29,5 +29,5 @@ function highScores() { //populate the <li> with array above
 highScores();
 
 function updateScores() {
-  
+
 }

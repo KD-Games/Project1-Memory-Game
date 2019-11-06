@@ -5,6 +5,18 @@ let lockBoard = false;
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
+//Sound effects
+let gameOverSound = new Audio("sounds/game_over.mp3");
+let victorySound = new Audio("sounds/victory.mp3");
+let noMatchSound = new Audio("sounds/incorrect.mp3");
+let animailSound = new Audio("sounds/animal.mp3");
+let disneySound = new Audio("sounds/disney.mp3");
+let toySound = new Audio("sounds/toys.mp3");
+let netflixSound = new Audio("sounds/Netflix_Audio.mp3");
+let celebritiesSound = new Audio("sounds/celebrities.mp3");
+let moviesSound = new Audio("sounds/movies.mp3");
+let brandsSound = new Audio("sounds/brands.mp3");
+
 
 //let score = 10;
 let scoreFinal = 10;
@@ -110,17 +122,17 @@ function gameTimer() {
         let countdown = document.getElementById("countdown");
         countdown.innerHTML = timeLeft;
         timeLeft -= 1;
+        
         if(matchedCard.length == cards.length){ //stop the timer when you win
-            console.log(timeLeft);
             timeFieldPopup.innerText = timeLeft +" seconds.";
             setTimeLeft();
             sessionStorage.setItem('timeLeft', timeLeft);
-        
         }
         if (timeLeft <= -1 || score < 0 || matchedCard.length == cards.length) {
             clearInterval(beginTimer);
         }
         if (timeLeft < 0) {
+            gameOverSound.play();
             countdown.style.backgroundColor = "red";
             countdown.style.color = "black";
             let goT = document.getElementById("game-over-time");
@@ -191,13 +203,35 @@ function checkForMatch() {
 
 }
 
-function disableCards() {
 
+
+function disableCards() {
+if(window.location.href.includes('ch1-Animals')){
+animailSound.play();
+}
+if(window.location.href.includes('ch2-Disney')){
+    disneySound.play();
+}
+if(window.location.href.includes('ch3-Toys')){
+    toySound.play();
+}
+if(window.location.href.includes('ad1-Netflix')){
+    netflixSound.play();
+}
+if(window.location.href.includes('ad2-Celebrities')){
+    celebritiesSound.play();
+}
+if(window.location.href.includes('ad3-Movies')){
+    moviesSound.play();
+}
+if(window.location.href.includes('ad4-Brands')){
+    brandsSound.play();
+}
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-    firstCard.parentElement.classList.add('x');
-    secondCard.parentElement.classList.add('x');
+    firstCard.parentElement.style.filter = "invert(100%)"; // adds filter effect to 1st
+    secondCard.parentElement.style.filter = "invert(100%)"; // and 2nd card matched
     firstCard.classList.add('match');
     secondCard.classList.add('match');
 
@@ -205,7 +239,9 @@ function disableCards() {
 }
 
 
+
 function unflipCards() {
+    noMatchSound.play();
     lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
@@ -234,7 +270,9 @@ function congratulations() {
     if (matchedCard.length == cards.length) {
         //show congratulations congratulationsPop
         congratulationsPop.classList.add("show");
-    };
+        victorySound.play();
+      };
+      
 }
 
 function goBack() {
@@ -247,9 +285,10 @@ flipBack();
 
 
 function gameOver() {
-    
+   
     if (score < 0) {
         let goS = document.getElementById("game-over-score");
+        gameOverSound.play();
         goS.style.visibility = "visible";
         gameOverPop.classList.add("show");
         sessionStorage.clear();

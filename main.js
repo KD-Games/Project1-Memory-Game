@@ -1,8 +1,10 @@
 
 let playerName = document.getElementById("fname");
 
-
-
+let Player =
+    {  name:"",
+       score: 0,
+       time: 0 };
 
 
 playerName.addEventListener('change', function(e){
@@ -12,14 +14,11 @@ setName();
 
 });
 
-let Player =
-    {  name:"",
-       score: 0 };
-
     function setName(){  
     let newObj = localStorage.getItem('player');
     newObj = JSON.parse(newObj);
     Player.name = newObj;
+    console.log(Player);
     }
 
 
