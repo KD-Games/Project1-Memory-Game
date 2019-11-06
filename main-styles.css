@@ -20,7 +20,6 @@ img {
     width: 100%;
     height: auto;
 }
-
 .container {
     display: flex;
     flex-direction: column;
@@ -44,8 +43,6 @@ header {
 header img {
     width: 50px;
 }
-
-
 
 header h1 {
     font-size: 4em;
@@ -92,8 +89,6 @@ header h1 {
 .game-btns button:hover {
     background-color: turquoise;
 }
-
-
 /*Pop Ups */
 .popup {
 	margin: 70px auto;
@@ -111,8 +106,6 @@ header h1 {
     color: #333;
     font-size: 2em;
 }
-
-
 .popup .content-1,
 .content-2 {
 	max-height: 30%;
@@ -162,4 +155,18 @@ width: 600px;
 .show {
 	visibility: visible !important;
 	opacity: 100 !important;
+}
+
+
+/*ScoreBoard*/
+.scores-description {
+    width: 80%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+.scores-description ol {
+    
 }
