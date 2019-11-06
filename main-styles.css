@@ -13,8 +13,11 @@ body{
     margin: 0;
     padding: 0;
     display: block;
-    background-image: url(images/bkgd.jpg);
+    background: url(images/bkgd.jpg) no-repeat center center fixed;
     background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    z-index: -10;
 }
 img {
     width: 100%;
@@ -28,8 +31,19 @@ img {
     overflow: hidden; 
     /* position: absolute; */
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin-top:100px;
+}
+.innercontainer {
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+}
+.flexbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 a{
     text-decoration: none;
@@ -187,4 +201,15 @@ width: 600px;
 }
 .home-btn button:hover {
     background-color: turquoise;
+}
+
+@media all and (max-width: 767px) {
+    .description {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+    .description h2 {
+        text-align: center;
+    }
 }

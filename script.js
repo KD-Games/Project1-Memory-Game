@@ -230,8 +230,8 @@ if(window.location.href.includes('ad4-Brands')){
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
-    firstCard.parentElement.style.filter = "invert(100%)"; // adds filter effect to 1st
-    secondCard.parentElement.style.filter = "invert(100%)"; // and 2nd card matched
+    firstCard.parentElement.style.filter = "blur(5px)"; // adds filter effect to 1st
+    secondCard.parentElement.style.filter = "blur(5px)"; // and 2nd card matched
     firstCard.classList.add('match');
     secondCard.classList.add('match');
 
