@@ -1,26 +1,16 @@
 
 let playerName = document.getElementById("fname");
 
-let Player =
-    {  name:"",
-       score: 0,
-       time: 0 };
+
 
 
 playerName.addEventListener('change', function(e){
 let pN = e.target.value;
 localStorage.setItem('player', JSON.stringify(pN));
-setName();
 
 });
 
-    function setName(){  
-    let newObj = localStorage.getItem('player');
-    newObj = JSON.parse(newObj);
-    Player.name = newObj;
-    console.log(Player);
-    }
-
+//localStorage.clear();
 
 
 
