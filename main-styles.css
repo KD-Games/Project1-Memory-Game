@@ -196,6 +196,26 @@ width: 600px;
     padding: 20px 30px;
     box-sizing: border-box;
 }
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+th, td {
+    padding: 5px 20px 5px 5px;
+    text-align: left;
+    font-family: 'Jomolhari', serif;
+    font-size: 1em;
+}
+th {
+    font-weight: bold;
+}
+td {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.num-align, .row-num {
+    text-align: center;
+}
 .scores-description ol {
     padding-left: 30px;
     width: 70%;

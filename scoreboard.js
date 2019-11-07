@@ -1,6 +1,7 @@
 
 
-let high_scores = document.querySelector("ol.high-scores");
+// let high_scores = document.querySelector("ol.high-scores");
+let high_scores = document.getElementById("high-scores");
 let scoresArray = JSON.parse(localStorage.getItem("high-scores"))  || new Array(10);
 
 timeLeft = sessionStorage.getItem('timeLeft');
@@ -25,7 +26,7 @@ localStorage["high-scores"] = JSON.stringify(scoresArray); //add the array to lo
 function highScores() { //populate the <li> with array above
 
   if(localStorage["high-scores"]) { //if the localStorage have the array which I already created.
-			high_scores.style.display = "block";
+			// high_scores.style.display = "block";
 			high_scores.innerHTML = '';
 			// high_names.style.display = "block";
 			// high_names.innerHTML = '';
@@ -96,9 +97,11 @@ console.log(scoresArray);
  playerTime = 'n/a';
 
 
-	let fragment = document.createElement('li');
+	// let fragment = document.createElement('li');
+	let fragment = document.createElement('tr');
 	
-	fragment.innerText +="Name: " + (playerName) + " Score: " +(playerScore) + " Time Left:" +(s.time)+ " seconds";
+	// fragment.innerText +="Name: " + (playerName) + " Score: " +(playerScore) + " Time Left:" +(s.time)+ " seconds";
+	fragment.innerHTML +="<td class='num-align'>" + [i + 1] + "</td><td>" + (playerName) + "</td><td>" + (playerScore) + "</td><td>" + (s.time) + " seconds" + "</td>";
 	high_scores.appendChild(fragment);
 	}
 					
