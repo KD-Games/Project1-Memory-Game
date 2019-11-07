@@ -207,6 +207,12 @@ color:black;
     height: 100%;
     transition: transform 1s;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    -o-transform-style: preserve-3d;
+    -o-transition: -o-transform 1s;
+    -moz-transform-style: preserve-3d;
+    -moz-transition: -moz-transform 1s;
     cursor: pointer;
     position: relative;
     
@@ -217,6 +223,9 @@ color:black;
 }
 .innercard.flip {
     transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
 }
 .front-card, .back-card {
     display: block;
@@ -224,13 +233,22 @@ color:black;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
 }
 .front-card {
     transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
     opacity: 1;
 }
 .back-card {
     transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     opacity: 1;
     background-color: black;
 }
