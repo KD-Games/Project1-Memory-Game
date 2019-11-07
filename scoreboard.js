@@ -3,6 +3,8 @@
 let high_scores = document.querySelector("ol.high-scores");
 let scoresArray = JSON.parse(localStorage.getItem("high-scores"))  || new Array(10);
 
+timeLeft = sessionStorage.getItem('timeLeft');
+
 function getName(){  
     let newName = localStorage.getItem('player');
     newName = JSON.parse(newName);
@@ -18,6 +20,7 @@ return currentTime;
 
 localStorage["high-scores"] = JSON.stringify(scoresArray); //add the array to localStorage. Will change to localStorage later
 
+localStorage["high-scores"] = JSON.stringify(scoresArray); //add the array to localStorage. Will change to localStorage later
 
 function highScores() { //populate the <li> with array above
 
@@ -87,6 +90,10 @@ console.log(scoresArray);
 	   playerScore = s.score;
 	   else
 	 playerScore = 'n/a';
+	 if(s.time)	
+	 playerTime = s.time;
+	 else
+ playerTime = 'n/a';
 
 
 	let fragment = document.createElement('li');
@@ -97,6 +104,7 @@ console.log(scoresArray);
 					
 } }
 
+// localStorage.clear();
 
 highScores();
   

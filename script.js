@@ -112,6 +112,11 @@ function savedTimeLeft (){
     timeLeft = Number(timeLeft) + timeFinal;
     setTimeLeft();
 }
+function savedTimeLeftBoard (){
+    timeLeft = sessionStorage.getItem('timeLeft');
+    timeLeft = Number(timeLeft);
+    setTimeLeft();
+}
 function reloadTime (){
     sessionStorage.setItem('timeLeft', 20);
 }
@@ -145,6 +150,11 @@ function gameTimer() {
             reloadTime(); // Reload time when you run out of time and clicked on Try Again button
         }
     }, 1000);
+}
+// get time for scoreboard localSession 
+let scoreboardButton = document.querySelector("#score-board");
+if(scoreboardButton){
+    scoreboardButton.addEventListener('click', savedTimeLeftBoard);
 }
 
 
