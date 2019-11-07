@@ -16,7 +16,38 @@ body{
     width: 100%;
     height: 100%;
 }
-
+body.animalbkgd {
+    background: url(images/bkgds/jungle.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.disneybkgd {
+    background: url(images/bkgds/disneycastle.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.toybkgd {
+    background: url(images/bkgds/toysballpit.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.netflixbkgd {
+    background: url(images/bkgds/netflixblurrybkgd.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.celebritiesbkgd {
+    background: url(images/bkgds/celebritiesbkgd.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.moviesbkgd {
+    background: url(images/bkgds/moviebkgd.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.brandsbkgd {
+    background: url(images/bkgds/brandbkgd.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body.all-background {
+    background: url(images/bkgds/allbkgd.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 a{
     text-decoration: none;
 }
