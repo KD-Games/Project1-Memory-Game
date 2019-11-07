@@ -93,12 +93,14 @@ header h1 {
     justify-content: space-between;
 }
 .game-btns button {
+    background-color: #ffffff;
     padding: 15px 20px;
     font-size: 1.4em;
     width: 150px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    transition: all 1s;
 }
 .game-btns button:hover {
     background-color: turquoise;
@@ -114,7 +116,20 @@ header h1 {
     font-family: 'Jomolhari', serif;
     text-align: center;
 }
-  
+.popup .close {
+	position: absolute;
+	top: 0px;
+	right: 20px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+.popup .close:hover {
+	color: #ed1c24;
+}
+
 .popup h2 {
 	margin-top: 0;
     color: #333;
