@@ -12,10 +12,7 @@ let noMatchSound = new Audio("sounds/incorrect.mp3");
 let animailSound = new Audio("sounds/animal.mp3");
 let disneySound = new Audio("sounds/disney.mp3");
 let toySound = new Audio("sounds/toys.mp3");
-let netflixSound = new Audio("sounds/Netflix_Audio.mp3");
-let celebritiesSound = new Audio("sounds/celebrities.mp3");
-let moviesSound = new Audio("sounds/movies.mp3");
-let brandsSound = new Audio("sounds/brands.mp3");
+
 
 
 let scoreFinal = 10;
@@ -27,8 +24,7 @@ let timeLeft;
 let scoreField = document.getElementById('score');
 let scoreFieldPopup = document.getElementById('score-pop');
 let timeFieldPopup = document.getElementById('time-pop');
-// scoreField.innerText = score; 
-// scoreFieldPopup.innerText = score; 
+
 
 let congratulationsPop = document.getElementById("popup1");
 let gameOverPop = document.getElementById("popup2");
@@ -39,11 +35,6 @@ let matchedCard = document.getElementsByClassName("match");
 
 if(window.location.href.includes('ch1-Animals')){ //first page
     sessionStorage.setItem('score', 10);
-    sessionStorage.setItem('timeLeft', 30);
-}
-
-if(window.location.href.includes('ad1-Netflix')){ //first page
-    sessionStorage.setItem('score', 30);
     sessionStorage.setItem('timeLeft', 30);
 }
 
@@ -227,18 +218,7 @@ if(window.location.href.includes('ch2-Disney')){
 if(window.location.href.includes('ch3-Toys')){
     toySound.play();
 }
-if(window.location.href.includes('ad1-Netflix')){
-    netflixSound.play();
-}
-if(window.location.href.includes('ad2-Celebrities')){
-    celebritiesSound.play();
-}
-if(window.location.href.includes('ad3-Movies')){
-    moviesSound.play();
-}
-if(window.location.href.includes('ad4-Brands')){
-    brandsSound.play();
-}
+
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
 
@@ -279,12 +259,13 @@ function resetBoard() {
 })();
 
 function congratulations() {
-    if (matchedCard.length == cards.length) {
-        //show congratulations congratulationsPop
-        congratulationsPop.classList.add("show");
-        victorySound.play();
-      };
-      
+if (matchedCard.length == cards.length) {
+//show congratulations congratulationsPop
+setTimeout(function(){ 
+    victorySound.play();
+    congratulationsPop.classList.add("show");
+}, 800);
+       }
 }
 
 function goBack() {
@@ -316,9 +297,6 @@ function tryAgain(){
 
 }
 
-
-
-console.log('this is at the bottom of the file lets see if we see this or if the error is preventing the file from getting this far')
 
 
 cards.forEach(card => {
