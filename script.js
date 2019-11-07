@@ -74,6 +74,7 @@ function savedScore (){
     score = Number(score) + scoreFinal;
     setScore();
 }
+
 function reloadScore (){
     sessionStorage.setItem('score', 10);
 }
@@ -125,10 +126,11 @@ function gameTimer() {
         
         if(matchedCard.length == cards.length){ //stop the timer when you win
             timeFieldPopup.innerText = timeLeft +" seconds.";
+            clearInterval(beginTimer);
             setTimeLeft();
-            sessionStorage.setItem('timeLeft', timeLeft);
+            //sessionStorage.setItem('timeLeft', timeLeft);
         }
-        if (timeLeft <= -1 || score < 0 || matchedCard.length == cards.length) {
+        if (timeLeft <= -1 || score < 0) {
             clearInterval(beginTimer);
         }
         if (timeLeft < 0) {
@@ -295,7 +297,14 @@ function gameOver() {
     };
 }
 
+let tryAgainBtn = document.querySelector("#try-again");
+tryAgainBtn.addEventListener('click', tryAgain);
 
+function tryAgain(){
+   reloadScore();
+   reloadTime(); 
+
+}
 
 
 
