@@ -26,8 +26,9 @@ function highScores() { //populate the <li> with array above
 
   for(let i=0; i < scores.length; i++){
 	  console.log(score);
-	  console.log(scores[i]);
-  if (parseInt(score) > JSON.parse(scores[i]).score || scores[i] === "") {
+	  let arrayScore = JSON.parse(scores[i]);
+	  console.log(arrayScore, scores[i]);
+  if (scores[i] === null || parseInt(score) > arrayScore.score ) {
    let Player =
 	{  name:"",
 	   score: 0,};
@@ -75,3 +76,4 @@ let backHomeBtn = document.querySelector("#return");
 backHomeBtn.addEventListener('click', function (){
     window.location.replace("index.html"); 
 });
+
