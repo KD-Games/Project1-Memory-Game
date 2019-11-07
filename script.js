@@ -18,10 +18,10 @@ let moviesSound = new Audio("sounds/movies.mp3");
 let brandsSound = new Audio("sounds/brands.mp3");
 
 
-//let score = 10;
 let scoreFinal = 10;
 let timeFinal = 20;
 let score; 
+let timeLeft; 
 
 
 let scoreField = document.getElementById('score');
@@ -47,11 +47,11 @@ if(window.location.href.includes('ad1-Netflix')){ //first page
     sessionStorage.setItem('timeLeft', 30);
 }
 
-// let score; 
+
 function getScore() {
     score = sessionStorage.getItem('score');
     score = Number(score);
-    setScore() 
+    setScore(); 
 }
 
 function setScore(){  //show score and save score to sessionStorage 
@@ -94,7 +94,7 @@ let initialTimer = setInterval(function () {
     }
 }, 1000);
 
-let timeLeft; 
+
 
 function getTimeLeft() {
     timeLeft = sessionStorage.getItem('timeLeft');
@@ -102,7 +102,7 @@ function getTimeLeft() {
     gameTimer();
     // setTimeLeft();
 }
-function setTimeLeft(){  //show score and save score to sessionStorage 
+function setTimeLeft(){  //save time to sessionStorage 
     countdown.innerText = timeLeft;
     sessionStorage.setItem('timeLeft', timeLeft);
 }
@@ -294,6 +294,8 @@ function gameOver() {
         sessionStorage.clear();
     };
 }
+
+
 
 
 

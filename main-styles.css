@@ -203,6 +203,14 @@ width: 600px;
     background-color: turquoise;
 }
 
+.high-scores{
+    color:blue;
+    
+}
+.high-scores li{
+    word-spacing: 10px;
+}
+
 @media all and (max-width: 767px) {
     .container {
         margin: 30px 0;
