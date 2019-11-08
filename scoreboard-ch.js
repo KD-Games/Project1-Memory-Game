@@ -4,7 +4,6 @@
 let chhigh_scores = document.getElementById("ch-high-scores");
 let chscoresArray = JSON.parse(localStorage.getItem("ch-high-scores"))  || new Array(10);
 
-chtimeLeft = sessionStorage.getItem('ch-timeLeft');
 
 function getName(){  
     let newName = localStorage.getItem('ch-player');
@@ -22,8 +21,8 @@ return currentTime;
 localStorage["ch-high-scores"] = JSON.stringify(chscoresArray); 
 function highScores() { //populate the <tr> with array above
 
-  if(localStorage["ch-high-scores"]) { 
-			chhigh_scores.innerHTML = '';
+
+chhigh_scores.innerHTML = '';
 		
 
 for(let i=0; i < chscoresArray.length; i++){
@@ -89,7 +88,7 @@ for(let i=0; i < chscoresArray.length; i++){
 	chhigh_scores.appendChild(fragment);
 	}
 					
-} }
+} 
 
 
 highScores();

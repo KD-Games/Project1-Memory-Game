@@ -22,13 +22,10 @@ return currentTime;
 localStorage["high-scores"] = JSON.stringify(scoresArray); 
 
 function highScores() { //populate the <tr> with array above
-
-  if(localStorage["high-scores"]) { //if the localStorage have the array which I already created.
 		
-			high_scores.innerHTML = '';
+high_scores.innerHTML = '';
 			
-  for(let i=0; i < scoresArray.length; i++){
-
+for(let i=0; i < scoresArray.length; i++){
 
   let arrayScore = scoresArray[i];
 
@@ -91,7 +88,7 @@ fragment.innerHTML +="<td class='num-align'>" + [i + 1] + ".</td><td>" + (player
 high_scores.appendChild(fragment);
 }
 					
-} }
+} 
 
 
 highScores();
