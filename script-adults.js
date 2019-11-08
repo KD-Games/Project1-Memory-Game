@@ -249,7 +249,7 @@ function unflipCards() {
         resetBoard();
     }, 1500);
     score -= 5;
-    if(score<=15){  // condition to show flip button
+    if(score<=25){  // condition to show flip button
     document.getElementById("see-cards").style.visibility = "visible";
     }
     if(score<2){  // condition to hide flip button
