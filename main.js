@@ -1,14 +1,24 @@
 
-let playerName = document.getElementById("fname");
+
+//Adds name entered in Child games to session storage
+let childName = document.getElementById("cname");
 
 
-playerName.addEventListener('change', function(e){
-let pN = e.target.value;
-localStorage.setItem('player', JSON.stringify(pN));
+childName.addEventListener('change', function(e){
+let pChild = e.target.value;
+localStorage.setItem('playerC', JSON.stringify(pChild));
 
 });
 
-//localStorage.clear();
+
+//Adds name entered in Adult games to session storage
+let adultName = document.getElementById("aname");
+
+adultName.addEventListener('change', function(e){
+let pAdult = e.target.value;
+localStorage.setItem('playerA', JSON.stringify(pAdult));
+
+});
 
 
 
@@ -55,9 +65,6 @@ adultButton.addEventListener('click', function(){
 adultcloseicon.addEventListener("click", function(e){
     adultPop.classList.remove('show');
 });
-
-
-
 
 adultPopButton.addEventListener('click', function (){
     window.location.replace("ad1-Netflix.html"); 

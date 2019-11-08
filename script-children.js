@@ -7,8 +7,10 @@ let firstCard, secondCard;
 
 //Sound effects
 let gameOverSound = new Audio("sounds/game_over.mp3");
-let victorySound = new Audio("sounds/victory.mp3");
 let noMatchSound = new Audio("sounds/incorrect.mp3");
+let victorySound = new Audio("sounds/victory.mp3");
+let finalVictory = new Audio("sounds/happy.mp3");
+
 let animailSound = new Audio("sounds/animal.mp3");
 let disneySound = new Audio("sounds/disney.mp3");
 let toySound = new Audio("sounds/toys.mp3");
@@ -262,7 +264,13 @@ function congratulations() {
 if (matchedCard.length == cards.length) {
 //show congratulations congratulationsPop
 setTimeout(function(){ 
+if(window.location.href.includes("ch3-Toys")){
+   finalVictory.play();
+   finalVictory.loop = true;
+}else{
     victorySound.play();
+}
+    
     congratulationsPop.classList.add("show");
 }, 800);
        }
