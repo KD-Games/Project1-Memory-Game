@@ -4,16 +4,19 @@ let lockBoard = false;
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
+let flipButton = document.getElementById("see-cards");
 
 //Sound effects
-let gameOverSound = new Audio("sounds/game_over.mp3");
 let victorySound = new Audio("sounds/victory.mp3");
+let finalVictorySound = new Audio("sounds/celebrate.mp3");
 let noMatchSound = new Audio("sounds/incorrect.mp3");
+let gameOverSound = new Audio("sounds/game_over.mp3");
 
 let netflixSound = new Audio("sounds/Netflix_Audio.mp3");
 let celebritiesSound = new Audio("sounds/celebrities.mp3");
 let moviesSound = new Audio("sounds/movies.mp3");
 let brandsSound = new Audio("sounds/brands.mp3");
+let allSound = new Audio("sounds/Yes.mp3");
 
 
 let scoreFinal = 30;
@@ -177,9 +180,7 @@ function flipBack() {
 function loadAnotherFlip() {
     cards.forEach(card => {
         card.classList.remove('flip');
-        card.classList.remove('avoid-clicks');
-    });
-}
+        card.classList.remove('avoid-clicks');});}
 ////////////////////////////////////////////////////////////
 
 function flipCard() {
@@ -223,15 +224,18 @@ if(window.location.href.includes('ad3-Movies')){
 if(window.location.href.includes('ad4-Brands')){
     brandsSound.play();
 }
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
+if(window.location.href.includes('ad5-All')){
+    allSound.play();
+}
+firstCard.removeEventListener('click', flipCard);
+secondCard.removeEventListener('click', flipCard);
 
-    firstCard.parentElement.style.filter = "blur(5px)"; // adds filter effect to 1st
-    secondCard.parentElement.style.filter = "blur(5px)"; // and 2nd card matched
-    firstCard.classList.add('match');
-    secondCard.classList.add('match');
+firstCard.parentElement.style.filter = "blur(5px)"; // adds filter effect to 1st
+secondCard.parentElement.style.filter = "blur(5px)"; // and 2nd card matched
+firstCard.classList.add('match');
+secondCard.classList.add('match');
 
-    resetBoard();
+resetBoard();
 }
 
 
@@ -246,6 +250,12 @@ function unflipCards() {
         resetBoard();
     }, 1500);
     score -= 5;
+    if(score<=15){  // condition to show flip button
+    document.getElementById("see-cards").style.visibility = "visible";
+    }
+    if(score<2){  // condition to hide flip button
+    document.getElementById("see-cards").style.visibility = "hidden";
+        }
     setScore();
 }
 
@@ -266,22 +276,58 @@ function congratulations() {
 if (matchedCard.length == cards.length) {
 //show congratulations congratulationsPop
 setTimeout(function(){ 
-victorySound.play();
+if(window.location.href.includes("ad5-All")){
+    finalVictorySound.play();
+    finalVictorySound.loop = true;
+
+}
+else{
+    victorySound.play();
+}
+
 congratulationsPop.classList.add("show");
 }, 800);}
 }
 
-function goBack() {
-    window.history.back();
+
+//shows the cards if flip button is clicked:
+flipButton.addEventListener('click', function() {
+
+flipButton.classList.add('avoid-clicks'); //disable flip button while cards are flipping
+
+score = score-2; // pays for flip
+gameOver(); // calls gameOver function to check if score goes below zero
+setScore(); // calls set score since there are changes being made to the score
+
+cards.forEach(card => {
+    if(!card.classList.contains("match")){ // condition to flip only unmatched cards
+    card.classList.add('flip');
+    card.classList.add('avoid-clicks')}});
+
+setTimeout(function(){  //settimeout to flip cards back after 4 seconds
+    cards.forEach(card => {
+    if(!card.classList.contains("match")){
+        console.log(card.classList);
+    card.classList.remove('flip');
+    card.classList.remove('avoid-clicks')}})},4000);
+
+if(score<2){  // condition to hide flip button
+document.getElementById("see-cards").style.visibility = "hidden";
 }
 
+setTimeout(function(){ //enable flip button again after flip is over
+flipButton.classList.remove('avoid-clicks');
+},4000);
 
+});
+
+
+  
 initialFlip();
 flipBack();
 
 
-function gameOver() {
-   
+function gameOver() { 
     if (score < 0) {
         let goS = document.getElementById("game-over-score");
         gameOverSound.play();

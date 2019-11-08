@@ -139,6 +139,9 @@ color:black;
     width: 40px;
     color:white;
 }
+#see-cards{
+    visibility: hidden; 
+}
 
 
 /*Card layout */
