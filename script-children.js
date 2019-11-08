@@ -138,7 +138,6 @@ function gameTimer() {
             let goT = document.getElementById("game-over-time");
             goT.style.visibility = "visible";
             gameOverPop.classList.add("show");
-            // sessionStorage.clear();
             reloadScore();  // Reload score when you run out of time and clicked on Try Again button
             reloadTime(); // Reload time when you run out of time and clicked on Try Again button
         }

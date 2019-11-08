@@ -51,10 +51,6 @@ body.all-background {
 a{
     text-decoration: none;
 }
-/* img {
-    width: 100%;
-    height: auto;
-} */
 
 header {
     display: flex;
@@ -80,8 +76,6 @@ header.adultcontainer {
 
 /*Countdown timer design*/
 #countdown{
-   /* margin-top: 30px;
-    margin-left: 300px; */
     position: relative;
     font-size: 34px;
 	width: 75px;
@@ -181,14 +175,11 @@ color:black;
 
 /*Card layout */
 .cards-container{
-    /* width: 600px;
-    height: 520px; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-content: flex-start;
     margin: 0 auto;
-    /* perspective: 1000px; */
 }
 .childgame-container {
     width: 600px;
@@ -206,10 +197,7 @@ color:black;
     perspective: 500px;
     margin-bottom: 20px;
 }
-/* .animalcontainer{
-    width:600px;
-    height:520px;
-} */
+
 .animalsize {
     width: 180px;
     height: 252px;
@@ -230,23 +218,7 @@ color:black;
     width: 90px;
     height: 148px;
 }
-/* .disneycontainer{
-    margin-top:20px;
-    width:800px;
-    height:620px;
-} */
-/* .toycontainer{
-    margin-top:20px;
-    width:1000px;
-    height:620px;
-} */
-/* .memory-card:active {
-    transform: scale(.97);
-    transition: transform .2s;
-}
-.memory-card.flip {
-    transform: rotateY(180deg);
-} */
+
 .innercard {
     width: 100%;
     height: 100%;
@@ -299,48 +271,6 @@ color:black;
 }
     
 
-/* .x .overlay{
-    width:100%;
-    height: 252px;
-    background: rgba(0,0,0,.5);
-    position: absolute;
-} */
-
-.animalsize.x .overlay {
-    width: 100%;
-    height: 252px;
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    z-index: 200;
-}
-.disneysize.x .overlay {
-    width: 100%;
-    height: 196px;
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    z-index: 20;
-}
-.toysize.x .overlay {
-    width: 100%;
-    height: 154px;
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    z-index: 20;
-}
-.netflixsize.x .overlay {
-    width: 100%;
-    height: 178px;
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    z-index: 20;
-}
-.brandssize.x .overlay {
-    width: 100%;
-    height: 148px;
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    z-index: 20;
-}
 .avoid-clicks {
     pointer-events: none;
   }
@@ -382,20 +312,7 @@ color:black;
     font-size: 2em;
 }
 
-/* .popup .close {
-	position: absolute;
-	top: 20px;
-	right: 30px;
-	transition: all 200ms;
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #333;
-} */
 
-/* .popup .close:hover {
-	color: #E5F720; 
-}*/
 .popup .content-1,
 .content-2 {
 	max-height: 30%;

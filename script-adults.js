@@ -19,8 +19,8 @@ let brandsSound = new Audio("sounds/brands.mp3");
 let allSound = new Audio("sounds/Yes.mp3");
 
 
-let scoreFinal = 30;
-let timeFinal = 60;
+let scoreFinal = 40;
+let timeFinal = 70;
 let score; 
 let timeLeft; 
 
@@ -128,7 +128,7 @@ function gameTimer() {
             timeFieldPopup.innerText = timeLeft +" seconds.";
             clearInterval(beginTimer);
             setTimeLeft();
-            //sessionStorage.setItem('timeLeft', timeLeft);
+            
         }
         if (timeLeft <= -1 || score < 0) {
             clearInterval(beginTimer);
@@ -140,7 +140,6 @@ function gameTimer() {
             let goT = document.getElementById("game-over-time");
             goT.style.visibility = "visible";
             gameOverPop.classList.add("show");
-            // sessionStorage.clear();
             reloadScore();  // Reload score when you run out of time and clicked on Try Again button
             reloadTime(); // Reload time when you run out of time and clicked on Try Again button
         }
