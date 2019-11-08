@@ -10,6 +10,7 @@ let playerName = document.getElementById("name");
 playerName.addEventListener('change', function(e){
 let pN = e.target.value;
 localStorage.setItem('player', JSON.stringify(pN));
+});
 
 // //Adds name entered in Child games to session storage
 // let childName = document.getElementById("cname");
