@@ -1,11 +1,15 @@
 
-let playerName = document.getElementById("fname");
+let chplayerName = document.getElementById("chname");
 
+chplayerName.addEventListener('change', function(e){
+    let chpN = e.target.value;
+    localStorage.setItem('ch-player', JSON.stringify(chpN));
+});
 
+let playerName = document.getElementById("name");
 playerName.addEventListener('change', function(e){
 let pN = e.target.value;
 localStorage.setItem('player', JSON.stringify(pN));
-
 });
 
 //localStorage.clear();

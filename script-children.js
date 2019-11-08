@@ -17,13 +17,12 @@ let toySound = new Audio("sounds/toys.mp3");
 
 let scoreFinal = 10;
 let timeFinal = 20;
-let score; 
-let timeLeft; 
+let chscore; 
+let chtimeLeft; 
 
-
-let scoreField = document.getElementById('score');
-let scoreFieldPopup = document.getElementById('score-pop');
-let timeFieldPopup = document.getElementById('time-pop');
+let chscoreField = document.getElementById('ch-score');
+let chscoreFieldPopup = document.getElementById('ch-score-pop');
+let chtimeFieldPopup = document.getElementById('ch-time-pop');
 
 
 let congratulationsPop = document.getElementById("popup1");
@@ -34,21 +33,21 @@ let matchedCard = document.getElementsByClassName("match");
 
 
 if(window.location.href.includes('ch1-Animals')){ //first page
-    sessionStorage.setItem('score', 10);
-    sessionStorage.setItem('timeLeft', 30);
+    sessionStorage.setItem('ch-score', 10);
+    sessionStorage.setItem('ch-timeLeft', 30);
 }
 
 
 function getScore() {
-    score = sessionStorage.getItem('score');
-    score = Number(score);
+    chscore = sessionStorage.getItem('ch-score');
+    chscore = Number(chscore);
     setScore(); 
 }
 
 function setScore(){  //show score and save score to sessionStorage 
-    scoreField.innerText = score;
-    scoreFieldPopup.innerText = score;
-    sessionStorage.setItem('score', score);
+    chscoreField.innerText = chscore;
+    chscoreFieldPopup.innerText = chscore;
+    sessionStorage.setItem('ch-score', chscore);
 }
 getScore();
 
@@ -61,13 +60,13 @@ if(nextLevelButton){
 }
 
 function savedScore (){
-    score = sessionStorage.getItem('score');
-    score = Number(score) + scoreFinal;
+    chscore = sessionStorage.getItem('ch-score');
+    chscore = Number(chscore) + scoreFinal;
     setScore();
 }
 
 function reloadScore (){
-    sessionStorage.setItem('score', 10);
+    sessionStorage.setItem('ch-score', 10);
 }
 
 //Initial Timer 
@@ -86,30 +85,31 @@ let initialTimer = setInterval(function () {
     }
 }, 1000);
 
+console.log("Child score? " + chscore);
 
 
 function getTimeLeft() {
-    timeLeft = sessionStorage.getItem('timeLeft');
-    timeLeft = Number(timeLeft); //+ 10;  //When i get to a new page i add ten to the score 
+    chtimeLeft = sessionStorage.getItem('ch-timeLeft');
+    chtimeLeft = Number(chtimeLeft); //+ 10;  //When i get to a new page i add ten to the score 
     gameTimer();
     // setTimeLeft();
 }
 function setTimeLeft(){  //save time to sessionStorage 
-    countdown.innerText = timeLeft;
-    sessionStorage.setItem('timeLeft', timeLeft);
+    countdown.innerText = chtimeLeft;
+    sessionStorage.setItem('ch-timeLeft', chtimeLeft);
 }
 function savedTimeLeft (){
-    timeLeft = sessionStorage.getItem('timeLeft');
-    timeLeft = Number(timeLeft) + timeFinal;
+    chtimeLeft = sessionStorage.getItem('ch-timeLeft');
+    chtimeLeft = Number(chtimeLeft) + timeFinal;
     setTimeLeft();
 }
 function savedTimeLeftBoard (){
-    timeLeft = sessionStorage.getItem('timeLeft');
-    timeLeft = Number(timeLeft);
+    chtimeLeft = sessionStorage.getItem('ch-timeLeft');
+    chtimeLeft = Number(chtimeLeft);
     setTimeLeft();
 }
 function reloadTime (){
-    sessionStorage.setItem('timeLeft', 20);
+    sessionStorage.setItem('ch-timeLeft', 20);
 }
 
 //Game Timer
@@ -117,19 +117,19 @@ function reloadTime (){
 function gameTimer() {
     let beginTimer = setInterval(function () {
         let countdown = document.getElementById("countdown");
-        countdown.innerHTML = timeLeft;
-        timeLeft -= 1;
+        countdown.innerHTML = chtimeLeft;
+        chtimeLeft -= 1;
         
         if(matchedCard.length == cards.length){ //stop the timer when you win
-            timeFieldPopup.innerText = timeLeft +" seconds.";
+            chtimeFieldPopup.innerText = chtimeLeft +" seconds.";
             clearInterval(beginTimer);
             setTimeLeft();
             //sessionStorage.setItem('timeLeft', timeLeft);
         }
-        if (timeLeft <= -1 || score < 0) {
+        if (chtimeLeft <= -1 || chscore < 0) {
             clearInterval(beginTimer);
         }
-        if (timeLeft < 0) {
+        if (chtimeLeft < 0) {
             gameOverSound.play();
             countdown.style.backgroundColor = "red";
             countdown.style.color = "black";
@@ -143,7 +143,7 @@ function gameTimer() {
     }, 1000);
 }
 // get time for scoreboard localSession 
-let scoreboardButton = document.querySelector("#score-board");
+let scoreboardButton = document.querySelector("#ch-score-board");
 if(scoreboardButton){
     scoreboardButton.addEventListener('click', savedTimeLeftBoard);
 }
@@ -241,7 +241,7 @@ function unflipCards() {
 
         resetBoard();
     }, 1500);
-    score -= 5;
+    chscore -= 5;
     setScore()
 }
 
@@ -279,7 +279,7 @@ flipBack();
 
 function gameOver() {
    
-    if (score < 0) {
+    if (chscore < 0) {
         let goS = document.getElementById("game-over-score");
         gameOverSound.play();
         goS.style.visibility = "visible";

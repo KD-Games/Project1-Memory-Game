@@ -216,10 +216,8 @@ td {
 .num-align, .row-num {
     text-align: center;
 }
-.scores-description ol {
-    padding-left: 30px;
-    width: 70%;
-    margin: 0 auto;
+.scores-description h1 {
+    text-align: center;
 }
 .home-btn {
     padding: 20px 0;

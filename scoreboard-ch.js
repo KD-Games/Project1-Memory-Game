@@ -1,60 +1,62 @@
 
 
 // let high_scores = document.querySelector("ol.high-scores");
-let high_scores = document.getElementById("high-scores");
-let scoresArray = JSON.parse(localStorage.getItem("high-scores"))  || new Array(10);
+let chhigh_scores = document.getElementById("ch-high-scores");
+let chscoresArray = JSON.parse(localStorage.getItem("ch-high-scores"))  || new Array(10);
 
-timeLeft = sessionStorage.getItem('timeLeft');
+chtimeLeft = sessionStorage.getItem('ch-timeLeft');
 
 function getName(){  
-    let newName = localStorage.getItem('player');
+    let newName = localStorage.getItem('ch-player');
     newName = JSON.parse(newName);
     return newName;
 		}
 
 function getTime(){  
-let currentTime = sessionStorage.getItem('timeLeft');
+let currentTime = sessionStorage.getItem('ch-timeLeft');
 currentTime = JSON.parse(currentTime);
 return currentTime;
 	}
 
+	// console.log("bli " + chscoresArray);
+	// console.log("bli2 " + chscoresArray[0]);
 
-localStorage["high-scores"] = JSON.stringify(scoresArray); //add the array to localStorage. Will change to localStorage later
 
-localStorage["high-scores"] = JSON.stringify(scoresArray); //add the array to localStorage. Will change to localStorage later
+localStorage["ch-high-scores"] = JSON.stringify(chscoresArray); //add the array to localStorage. Will change to localStorage later
+
+localStorage["ch-high-scores"] = JSON.stringify(chscoresArray); //add the array to localStorage. Will change to localStorage later
 
 function highScores() { //populate the <li> with array above
 
-  if(localStorage["high-scores"]) { //if the localStorage have the array which I already created.
+  if(localStorage["ch-high-scores"]) { //if the localStorage have the array which I already created.
 			// high_scores.style.display = "block";
-			high_scores.innerHTML = '';
+			chhigh_scores.innerHTML = '';
 			// high_names.style.display = "block";
 			// high_names.innerHTML = '';
 
 
-  for(let i=0; i < scoresArray.length; i++){
+  for(let i=0; i < chscoresArray.length; i++){
 
+  let arrayScore = chscoresArray[i];
 
-  let arrayScore = scoresArray[i];
-
-  if (scoresArray[i] === null || parseInt(score) > arrayScore.score ) {
+  if (chscoresArray[i] === null || parseInt(chscore) > arrayScore.chscore ) {
    let Player =
 	{  name:"",
 	   score: 0,
-	   time: 0};
-	Player.score = score;
-	Player.name = getName();
-	Player.time = getTime();
+	   chtime: 0};
+	Player.chscore = chscore;
+	Player.chname = getName();
+	Player.chtime = getTime();
 
 	
 
-    scoresArray.splice(i, 0, Player);
-	scoresArray.length = Math.min(scoresArray.length, 10); //Where 10 is the max scores you want to keep
+    chscoresArray.splice(i, 0, Player);
+	chscoresArray.length = Math.min(chscoresArray.length, 10); //Where 10 is the max scores you want to keep
 	break;
 			}	
 		}
 		
-	localStorage["high-scores"] = JSON.stringify(scoresArray);
+	localStorage["ch-high-scores"] = JSON.stringify(chscoresArray);
 	//localStorage.setItem("high-scores", JSON.stringify(scores));
 	
 
@@ -63,36 +65,36 @@ function highScores() { //populate the <li> with array above
 	//let scoreBlah = JSON.parse(scorelistArr)
 	
 	
-	scoresArray = scoresArray.sort((a,b)=>{
+	chscoresArray = chscoresArray.sort((a,b)=>{
 	if(a && b){
-		let n = b.score - a.score;
+		let n = b.chscore - a.chscore;
 		if(n !==0){
 			return n;
 		}
-		return b.time - a.time;
+		return b.chtime - a.chtime;
 	}
    });
 
 
-console.log(scoresArray);
+console.log(chscoresArray);
 	   
 	for(let i = 0; i < 10; i++){
 	
-	let s = scoresArray[i];	
+	let s = chscoresArray[i];	
 
 	let playerName;
 	let playerScore;
 		
-	if(s.name)
-	    playerName = s.name;
+	if(s.chname)
+	    playerName = s.chname;
 	   else 
 		playerName = 'n/a';
-	if(s.score)	
-	   playerScore = s.score;
+	if(s.chscore)	
+	   playerScore = s.chscore;
 	   else
 	 playerScore = 'n/a';
-	 if(s.time)	
-	 playerTime = s.time;
+	 if(s.chtime)	
+	 playerTime = s.chtime;
 	 else
  playerTime = 'n/a';
 
@@ -101,13 +103,13 @@ console.log(scoresArray);
 	let fragment = document.createElement('tr');
 	
 	// fragment.innerText +="Name: " + (playerName) + " Score: " +(playerScore) + " Time Left:" +(s.time)+ " seconds";
-	fragment.innerHTML +="<td class='num-align'>" + [i + 1] + "</td><td>" + (playerName) + "</td><td>" + (playerScore) + "</td><td>" + (s.time) + " seconds" + "</td>";
-	high_scores.appendChild(fragment);
+	fragment.innerHTML +="<td class='num-align'>" + [i + 1] + ".</td><td>" + (playerName) + "</td><td>" + (playerScore) + "</td><td>" + (s.chtime) + " seconds" + "</td>";
+	chhigh_scores.appendChild(fragment);
 	}
 					
 } }
 
-// localStorage.clear();
+// localStorage.clear(); 
 
 highScores();
   
