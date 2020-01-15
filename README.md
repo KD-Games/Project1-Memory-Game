@@ -5,6 +5,7 @@ A single player responsive memory game with multiple levels:
 - Level 1 Animals
 - Level 2 Disney
 - Level 3 Toys
+
 Children Level 1 image below:
 ![Children Level 1](https://i.imgur.com/1EjMAxG.png)
 
@@ -14,6 +15,7 @@ Children Level 1 image below:
 - Level 3 Movies
 - Level 4 Brands
 - Level 5 Mixed themes
+
 Adults Level 1 image below:
 ![Adults Level 1](https://i.imgur.com/p012xGt.png)
 
