@@ -1,5 +1,7 @@
 ## Memory Game Vanilla Javascript
 
+[Live DEMO](https://kd-games.github.io/Project1-Memory-Game/)
+
 A single player responsive memory game with multiple levels: 
 3 levels (children-easy): 
 - Level 1 Animals
